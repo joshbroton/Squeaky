@@ -1,0 +1,1041 @@
+/*--
+    Theme Name:  Squeaky Clean
+    Theme URI:  http: //www.joshbroton.com/squeakyclean
+    Description:  A fast and clean responsive WordPress boilerplate
+    Author:  Josh Broton
+    Author URL:  http: //www.joshbroton.com
+--*/
+
+/*
+  ---- ---- ---- ---- VARIABLES ---- ---- ---- ----
+*/
+// Site Colors
+$green: rgb(102,122,97); //#667a61
+
+// Greys
+$black: rgb(0,0,0); //#000000
+$darkergrey: lighten($black, 10%);
+$darkgrey: lighten($black, 25%); //#404040
+$midgrey: lighten($black, 50%); //#808080
+$lightgrey: lighten($black, 75%); //#bfbfbf
+$lightergrey: lighten($black, 90%); //#e6e6e6
+$white: rgb(255,255,255); //#ffffff
+
+// Root
+$bodycolor: $white;
+$textcolor: $black;
+$columnmargin: 10px;
+$gutter: 20px;
+$warningcolor: red;
+
+// Typography
+$basefont: PT Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+$basefontsize: 100%;
+$baselineheight: 1.2em;
+$headingfont: PT Serif, Cambria, Georgia, Times, "Times New Roman", serif;
+$headinglineheight: 1.35em;
+$headingfontweight: bold;
+$headingcolor: $textcolor;
+$codefont: PT Mono, Monaco, Courier New, monospace;
+
+// Links
+$linkcolor: rgb(139,149,179); //#8B95B3
+$linkhover: darken($linkcolor,7%);
+$linkvisited: darken($linkcolor,14%);
+$linkfocus: darken($linkcolor,21%);
+
+// Forms
+$textboxbackground: $white;
+$textboxbordercolor: $lightgrey;
+$textboxbordercoloractive: $midgrey;
+$textboxborderwidth: 1px;
+$textboxborderstyle: solid;
+$textboxcolor: $midgrey;
+$textboxplaceholdercolor: $lightgrey;
+$textboxpadding: $gutter / 4;
+
+$buttonbackground: $midgrey;
+$buttonbordercolor: darken($buttonbackground,10%);
+$buttonborderwidth: 1px;
+$buttonborderstyle: solid;
+$buttoncolor: $white;
+$buttonpadding: .25em .75em;
+
+// Tables
+$tablebackground: transparent;
+$tablestripe: $lightergrey;
+$tablefontsize: .875em;
+$tablelineheight: 1.4em;
+$tableborderwidth: 1px;
+$tableborderstyle: solid;
+$tablebordercolor: $lightgrey;
+$tablehover: $lightgrey;
+
+
+
+/*
+  ---- ---- ---- ---- MIXINS ---- ---- ---- ----
+*/
+// Thank you to Andy Clarke for most of these (320 and Up)
+// @include text-overflow()
+@mixin text-overflow() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// Gradient Backgrounds
+// @include horizontal(COLOR, COLOR)
+@mixin horizontal($startColor: $white, $endColor: $lightergrey) {
+    background-color: $endColor;
+    background-image: -webkit-gradient(linear, 0 0, 100% 0, from($startColor), to($endColor));
+    background-image: -webkit-linear-gradient(left, $startColor, $endColor);
+    background-image: -moz-linear-gradient(left, $startColor, $endColor);
+    background-image: -ms-linear-gradient(left, $startColor, $endColor);
+    background-image: -o-linear-gradient(left, $startColor, $endColor);
+    background-image: linear-gradient(left, $startColor, $endColor);
+    background-repeat: repeat-x;
+}
+
+// @include vertical(COLOR, COLOR)
+@mixin vertical($startColor: $white, $endColor:  $lightergrey) {
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from($startColor), to($endColor));
+    background-image: -webkit-linear-gradient(top, $startColor, $endColor);
+    background-color: $endColor;
+    background-image: -moz-linear-gradient(top, $startColor, $endColor);
+    background-image: -ms-linear-gradient(top, $startColor, $endColor);
+    background-image: -o-linear-gradient(top, $startColor, $endColor);
+    background-image: linear-gradient(top, $startColor, $endColor);
+    background-repeat: repeat-x;
+}
+
+// @include directional(COLOR, COLOR, DEG)
+@mixin directional($startColor: $white, $endColor: $lightergrey, $deg: 45deg) {
+    background-color: $endColor;
+    background-image: -moz-linear-gradient($deg, $startColor, $endColor);
+    background-image: -ms-linear-gradient($deg, $startColor, $endColor);
+    background-image: -webkit-linear-gradient($deg, $startColor, $endColor);
+    background-image: -o-linear-gradient($deg, $startColor, $endColor);
+    background-image: linear-gradient($deg, $startColor, $endColor);
+    background-repeat: repeat-x;
+}
+
+// Box Styles
+// @include rounded(INT)
+@mixin rounded($radius: 4px) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+// @include border-radius(INT, INT, INT, INT)
+@mixin border-radius($topright: 0, $bottomright: 0, $bottomleft: 0, $topleft: 0) {
+    -webkit-border-top-right-radius: $topright;
+    -webkit-border-bottom-right-radius: $bottomright;
+    -webkit-border-bottom-left-radius: $bottomleft;
+    -webkit-border-top-left-radius: $topleft;
+    -moz-border-radius-topright: $topright;
+    -moz-border-radius-bottomright: $bottomright;
+    -moz-border-radius-bottomleft: $bottomleft;
+    -moz-border-radius-topleft: $topleft;
+    border-top-right-radius: $topright;
+    border-bottom-right-radius: $bottomright;
+    border-bottom-left-radius: $bottomleft;
+    border-top-left-radius: $topleft;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+}
+
+// @include box-shadow(SHADOW DELCARATION)
+@mixin box-shadow($shadow: 0 1px 3px rgba(0,0,0,.25)) {
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    box-shadow: $shadow;
+}
+
+// @include drop-shadow(X-OFFSET, Y-OFFSET, BLUR, ALPHA)
+@mixin drop-shadow($x-axis: 0, $y-axis: 1px, $blur: 2px, $alpha: 0.1) {
+    -webkit-box-shadow: $x-axis $y-axis $blur rgba(0, 0, 0, $alpha);
+    -moz-box-shadow: $x-axis $y-axis $blur rgba(0, 0, 0, $alpha);
+    box-shadow: $x-axis $y-axis $blur rgba(0, 0, 0, $alpha);
+}
+
+// @include opacity(DECIMAL 0-1)
+@mixin opacity($opacity: .5) {
+    -webkit-opacity: $opacity;
+    -moz-opacity: $opacity;
+    opacity: $opacity;
+}
+
+// @include transition(PROPERTY DURATION DELAY(OPT) TIMING-FUNCTION)
+@mixin transition($transition) {
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -ms-transition: $transition;
+    -o-transition: $transition;
+    transition: $transition;
+}
+
+// Object contains floated children
+// @include clearfix()
+@mixin clearfix() {
+    *zoom: 1;
+    &:before,
+    &:after {
+        display: table;
+        content: "";
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+// Image Replacement
+// @include hide-text()
+@mixin hide-text() {
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+// Value using calc
+// @include width-calc(STRING PROPERTY, STRING OPERATION)
+@mixin css3-calc($property, $operation) {
+    #{$property}: -moz-calc(#{$operation});
+    #{$property}: -webkit-calc(#{$operation});
+    #{$property}: calc(#{$operation});
+}
+
+// Width using calc
+// @include width-calc(INT FULL WIDTH, INT MINUS)
+@mixin css3-calc($property, $fullvalue, $minus) {
+    #{$property}: -moz-calc(#{$fullvalue} - #{$minus});
+    #{$property}: -webkit-calc(#{$fullvalue} - #{$minus});
+    #{$property}: calc(#{$fullvalue} - #{$minus});
+}
+
+
+
+/*
+  ---- ---- ---- ---- RESET STYLESHEET ---- ---- ---- ----
+*/
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, cite, code, del, dfn, em, img, q, s, samp, small, strike, strong, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, button, table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 100%;
+    line-height: 1.2;
+    font-family: inherit;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+    display: block;
+}
+
+audio[controls], canvas, video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+
+/*
+  ---- ---- ---- ---- FONT-FACE DECLARATIONS ---- ---- ---- ----
+*/
+// All fonts downloaded from fontsquirrel.com.
+@font-face {
+    font-family: 'PT Serif';
+    src: url('fonts/PTF55F-webfont.eot');
+    src: url('fonts/PTF55F-webfont.eot?#iefix') format('embedded-opentype'),
+    url('fonts/PTF55F-webfont.woff') format('woff'),
+    url('fonts/PTF55F-webfont.ttf') format('truetype'),
+    url('fonts/PTF55F-webfont.svg#PTSerifRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PT Serif';
+    src: url('fonts/PTF75F-webfont.eot');
+    src: url('fonts/PTF75F-webfont.eot?#iefix') format('embedded-opentype'),
+    url('fonts/PTF75F-webfont.woff') format('woff'),
+    url('fonts/PTF75F-webfont.ttf') format('truetype'),
+    url('fonts/PTF75F-webfont.svg#PTSerifBold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PT Mono';
+    src: url('fonts/PTM55FT-webfont.eot');
+    src: url('fonts/PTM55FT-webfont.eot?#iefix') format('embedded-opentype'),
+    url('fonts/PTM55FT-webfont.woff') format('woff'),
+    url('fonts/PTM55FT-webfont.ttf') format('truetype'),
+    url('fonts/PTM55FT-webfont.svg#PTMonoRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    src: url('fonts/PTS55F-webfont.eot');
+    src: url('fonts/PTS55F-webfont.eot?#iefix') format('embedded-opentype'),
+    url('fonts/PTS55F-webfont.woff') format('woff'),
+    url('fonts/PTS55F-webfont.ttf') format('truetype'),
+    url('fonts/PTS55F-webfont.svg#PTSansRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    src: url('fonts/PTS75F-webfont.eot');
+    src: url('fonts/PTS75F-webfont.eot?#iefix') format('embedded-opentype'),
+    url('fonts/PTS75F-webfont.woff') format('woff'),
+    url('fonts/PTS75F-webfont.ttf') format('truetype'),
+    url('fonts/PTS75F-webfont.svg#PTSansBold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+
+
+/*
+  ---- ---- ---- ---- ALL VIEWPORTS AND SIZES ---- ---- ---- ----
+*/
+/* BODY */
+@-webkit-viewport {
+    width: device-width;
+}
+
+@-moz-viewport {
+    width: device-width;
+}
+
+@-ms-viewport {
+    width: device-width;
+}
+
+@-o-viewport {
+    width: device-width;
+}
+
+@viewport {
+    width: device-width;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    background: $bodycolor;
+    -webkit-overflow-scrolling: touch;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    font-family: $basefont;
+    font-size: $basefontsize;
+    line-height: $baselineheight;
+    color: $textcolor;
+}
+
+.clearfix {
+    @include clearfix();
+}
+
+
+/* TYPOGRAPHY */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+    font-family: $headingfont;
+    font-weight: $headingfontweight;
+    color: $headingcolor;
+    line-height: $headinglineheight;
+    text-rendering:  optimizeLegibility;
+}
+
+h1,
+.h1 {
+    margin-bottom: $baselineheight / 1.5;
+    font-size: 2em;
+}
+
+h2,
+.h2 {
+    margin-bottom: $baselineheight / 1.5;
+    font-size: 1.5em;
+}
+
+h3,
+.h3 {
+    margin-bottom: $baselineheight / 1.75;
+    font-size: 1.25em;
+}
+
+h4,
+.h4 {
+    margin-bottom: $baselineheight / 1.75;
+    font-size: 1.125em;
+}
+
+h5,
+.h5 {
+    margin-bottom: $baselineheight / 2;
+    font-size: 1em;
+}
+
+h6,
+.h6 {
+    margin-bottom: $baselineheight / 2;
+    font-size: 1em;
+    font-weight: normal;
+}
+
+p,
+ol,
+ul,
+dl,
+address {
+    margin-bottom: $baselineheight;
+    line-height: $baselineheight * 1.2;
+}
+
+small {
+    font-size: .875em;
+}
+
+ul,
+ol {
+    padding: 0 0 0 $gutter;
+}
+
+blockquote {
+    margin: 0 $gutter $baselineheight $gutter - 5px;
+    border-left: 5px solid $lightgrey;
+    font-family: $headingfont;
+    font-style: italic;
+}
+
+dl,
+dd {
+    margin-bottom: $baselineheight
+}
+
+dt {
+    font-weight: bold;
+}
+
+b,
+strong {
+    font-weight:  bold;
+
+    a {
+        font-weight: bold;
+    }
+}
+
+dfn,
+em {
+    font-style: italic;
+}
+
+ins {
+    background-color: $lightergrey;
+    color: $warningcolor;
+    text-decoration: none;
+}
+
+mark {
+    background-color: $lightergrey;
+    color: $warningcolor;
+    font-style: italic;
+    font-weight: bold;
+}
+
+pre,
+code,
+kdb,
+samp {
+    padding: $gutter / 4;
+    background-color: $lightergrey;
+    font-family: $codefont;
+    font-size: .875em;
+}
+
+pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+sub,
+sup {
+    position: relative;
+    font-size: .75em;
+    line-height: 0;
+    vertical-align: $baselineheight;
+}
+
+sup {
+    top: -.5em;
+}
+
+sub {
+    bottom: -.25em;
+}
+
+/* LINKS */
+a {
+    color: $linkcolor;
+    text-decoration: none;
+    cursor:  pointer;
+
+    &:hover {
+        color: $linkhover;
+        text-decoration: underline;
+        border: 0;
+        outline: 0;
+    }
+
+    &:visited {
+        color: $linkvisited;
+    }
+
+    &:focus,
+    &:active {
+        color: $linkfocus;
+        border: 0;
+        outline: 0;
+    }
+
+    img {
+        border: 0;
+        outline: 0;
+    }
+}
+
+strong a {
+    font-weight:  bold;
+}
+
+/* SELECTION */
+::-moz-selection {
+    background-color: $midgrey;
+    color: $white;
+    text-shadow: none;
+}
+
+::selection {
+    background-color: $midgrey;
+    color: $white;
+    text-shadow: none;
+}
+
+/* ELEMENTS */
+hr {
+    display: block;
+    margin: 1em 0;
+    padding: 0;
+    height: 1px;
+    border: 0;
+    background-color: $lightgrey;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: middle;
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+}
+
+figure {
+    margin-bottom: $baselineheight;
+}
+
+figcaption {
+    display: block;
+    margin: 0 0 $baselineheight 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+/* FORMS */
+label {
+    font-size: .875em;
+    color: $darkgrey;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="url"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="file"],
+select,
+textarea,
+.textbox {
+    display: block;
+    width: 100%;
+    max-width: 768px;
+    padding: $textboxpadding;
+    margin-bottom: $baselineheight;
+    background-color: $textboxbackground;
+    border: $textboxborderwidth $textboxborderstyle $textboxbordercolor;
+    color: $textboxcolor;
+    font-size: .875em;
+
+    &:active,
+    &:focus {
+        border-color: $textboxbordercoloractive;
+    }
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    margin: 3px 0;
+    padding: 0;
+    *width: 13px;
+    *height: 13px;
+}
+
+button,
+.button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+    width: auto;
+    height: auto;
+    padding: .25em .5em;
+    background-color: $buttonbackground;
+    border: $buttonborderwidth $buttonborderstyle $buttonbordercolor;
+    color: $buttoncolor;
+    font-size: .875em;
+    cursor: pointer;
+}
+
+input[type="hidden"] {
+    display: none;
+}
+
+input[disabled],
+select[disabled],
+textarea[disabled],
+input[readonly],
+select[readonly],
+textarea[readonly] {
+    @include opacity(.5);
+    cursor: not-allowed;
+}
+
+::-webkit-input-placeholder,
+:-moz-placeholder,
+:-ms-input-placeholder {
+    color: $textboxplaceholdercolor;
+    font-size: .875em;
+}
+
+/* BUTTON SIZES */
+.button-xl {
+    padding: .875em 1.75em;
+    font-size: 1.25em;
+    @include border-radius(6px);
+}
+
+.button-lg {
+    padding: .5em 1em;
+    font-size: 1em;
+    @include border-radius(5px);
+}
+
+.button-med {
+    padding: .375em .75em;
+    font-size: .875em;
+    line-height: 1em;
+    @include border-radius(4px);
+}
+
+.button-xs {
+    padding: .25em .5em;
+    font-size: .75em;
+    line-height: .875em;
+    @include border-radius(3px);
+}
+
+/* TABLES */
+table {
+    height: 100%;
+    width: 100%;
+    margin-bottom: $baselineheight / 2;
+    background-color: $tablebackground;
+    border-spacing: 0;
+}
+
+    th,
+    td {
+        padding: 0 .5em;
+        vertical-align: middle;
+        border-top:  $tableborderwidth $tableborderstyle $tablebordercolor;
+        line-height: $baselineheight;
+        text-align: left;
+        font-size: .875em;
+    }
+
+    th {
+        font-weight: bold;
+    }
+
+    thead th {
+        vertical-align: bottom;
+    }
+
+    thead:first-child tr:first-child th,
+    thead:first-child tr-first-child td {
+        border-top: 0;
+    }
+
+    tbody tr td,
+    tbody tr th {
+        @include transition(background-color .25s 0 ease);
+    }
+
+    tbody tr:hover td,
+    tbody tr:hover th {
+        background-color: $tablehover;
+    }
+
+.table-striped {
+    tbody tr:nth-child(odd) td,
+    tbody tr:nth-child(odd) th {
+        background-color: $tablestripe;
+    }
+}
+
+/* PAGE LAYOUT */
+body {
+    padding-top: 50px;
+}
+
+header.main {
+    padding: 5%;
+}
+
+.logo {
+    width: 100%;
+
+    h1 {
+        margin-bottom: 0;
+    }
+}
+
+section.main {
+    width: 100%;
+    padding: 5%;
+}
+
+/* NAVIGATION */
+.navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    background-color: $green;
+    border-bottom: 1px solid white;
+}
+
+    nav.social {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 5px 5px;
+    }
+
+    nav.social a,
+    #openMobileMenu{
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        background-repeat: no-repeat;
+        background-position: left top;
+        @include transition(background-position 0.2s ease);
+
+        &:hover {
+            background-position: left -40px;
+        }
+    }
+
+    #openMobileMenu {
+        position: absolute;
+        display: inline-block;
+        background-image: url(images/menu-icon.png);
+        right: 0;
+        top: 0;
+        margin: 5px;
+    }
+
+        .twitter {
+            background-image: url(images/twitter-logo.png);
+        }
+
+        .web {
+            background-image: url(images/web-logo.png);
+        }
+
+        .github {
+            background-image: url(images/github-logo.png);
+        }
+
+    nav.primary {
+        position: absolute;
+        display: none;
+        left: 0;
+        top: 50px;
+        width: 100%;
+        background: $green;
+
+        ul {
+            margin-bottom: 0;
+            padding: 0;
+        }
+
+        li {
+            width: 100%;
+            list-style: none;
+            border-bottom: 1px solid white;
+
+            &:last-child {
+                border-bottom: 0;
+            }
+        }
+
+        a {
+            display: block;
+            padding: 20px;
+            color: white;
+            font-weight: bold;
+
+            &:hover {
+                background-color: lighten($green, 5%);
+            }
+        }
+    }
+
+/* BLOG POSTS LAYOUT */
+article.post {
+    hr {
+        margin: 2em 20%;
+        width: 60%;
+    }
+}
+
+    .article-header {
+        h1 {
+            margin-bottom: 0;
+
+            a{
+                font-weight: bold;
+            }
+        }
+
+        .byline {
+            margin: .5em 0;
+            font-size: .875em;
+            font-style: italic;
+
+            a {
+                font-style: italic;
+            }
+        }
+    }
+
+    .attachment-post-thumbnail {
+        width: 100% !important;
+        height: auto !important;
+        margin-top: 1em;
+        margin-bottom: .5em;
+        padding: 5px;
+        border: 1px solid $lightgrey;
+    }
+
+    .article-footer {
+        padding: .5em;
+        background-color: $lightergrey;
+        font-size: .875em;
+    }
+
+    .comments {
+        margin-top: 1em;
+
+        input[type="text"] {
+            margin-bottom: 0;
+        }
+    }
+
+    .wp-prev-next {
+        margin-bottom: 2em;
+        @include clearfix();
+
+        .prev-link {
+            float: left;
+        }
+
+        .next-link {
+            float: right;
+        }
+
+        .prev-link,
+        .next-link {
+            a {
+                color: red;
+            }
+        }
+    }
+
+    section[role='complimentary'] {
+        border: 1px solid $lightgrey;
+        padding: 5%;
+
+        article {
+
+        }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+        hr {
+            width: 60%;
+            margin: 2em auto;
+            background-color: $lightgrey;
+
+            &:last-child {
+                display: none;
+            }
+        }
+    }
+
+footer.main {
+    width: 100;
+    margin-top: 2em;
+    padding: 2em 5%;
+    background-color: $darkergrey;
+    color: white;
+}
+
+@media only screen and (min-width: 48em) { //approximate min-width: 768px
+    header.main {
+        padding: 2.5%;
+    }
+
+        .logo {
+            padding: 0;
+        }
+
+    section.main {
+        padding: 2.5%;
+    }
+
+
+    /* BLOG POSTS LAYOUT */
+    article.post {
+        &:last-of-type {
+            margin-bottom: 2.5%;
+
+            hr {
+                display: none;
+            }
+        }
+    }
+
+    .wp-prev-next {
+        margin-bottom: 0;
+    }
+
+    section[role='complimentary'] {
+        padding: 2.5%;
+        @include clearfix();
+
+        article {
+            float: left;
+            width: 47.5%;
+            margin: 0 5% 0 0;
+            padding-right: 5%;
+            border-right: 1px solid $lightgrey;
+
+            &:nth-child(2n+3) {
+                margin: 0;
+                border-right: 0;
+            }
+        }
+
+        hr {
+            display: none;
+        }
+    }
+
+    footer.main {
+        margin-top: 0;
+    }
+}
+
+@media only screen and (min-width: 54em) { //approximate min-width: 992px
+    section.content {
+        float: left;
+        width: 62.166666666666667%;
+    }
+
+    section[role='complimentary'] {
+        float: right;
+        width: 33.3333333333333%;
+        padding: 0;
+        border: 0;
+
+        article {
+            float: none;
+            width: 100%;
+            margin: 0 0 5% 0;
+            padding: 0 0 5% 0;
+            border-right: 0;
+        }
+
+        hr {
+            display: block;
+            margin: 1em auto;
+
+        }
+    }
+}
+
+@media only screen and (min-width: 62em) { //approximate min-width: 1340px
+
+}
