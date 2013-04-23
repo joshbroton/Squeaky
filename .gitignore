@@ -164,3 +164,6 @@ pip-log.txt
 
 #SASS
 .sass-cache
+
+#JetBrains
+.idea
