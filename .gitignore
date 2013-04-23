@@ -164,6 +164,7 @@ pip-log.txt
 
 #SASS
 .sass-cache
+*.map
 
 #JetBrains
 .idea

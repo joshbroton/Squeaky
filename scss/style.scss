@@ -954,6 +954,7 @@ footer.main {
 
 @media only screen and (min-width: 48em) { //approximate min-width: 768px
     header.main {
+        position: relative;
         padding: 2.5%;
     }
 
@@ -963,6 +964,37 @@ footer.main {
 
     section.main {
         padding: 2.5%;
+    }
+
+    /* NAVIGATION LAYOUT */
+    #openMobileMenu {
+        display: none;
+    }
+
+    nav.primary {
+        display: block !important;
+        right: 2.5%;
+        top: auto;
+        bottom: 2.5%;
+        width: auto;
+        background: transparent;
+        text-align: right;
+
+        li {
+            display: inline-block;
+            width: auto;
+            border-bottom: 0;
+        }
+
+        a,
+        span {
+            padding: 0 .5em;
+            color: $textcolor;
+
+            &:hover {
+                background-color: transparent;
+            }
+        }
     }
 
 
@@ -982,6 +1014,7 @@ footer.main {
     }
 
     section[role='complimentary'] {
+        margin-top: 2.5%;
         padding: 2.5%;
         @include clearfix();
 
@@ -1005,6 +1038,7 @@ footer.main {
 
     footer.main {
         margin-top: 0;
+        padding: 2.5%;
     }
 }
 
