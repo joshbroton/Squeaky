@@ -40,7 +40,6 @@ audio[controls], canvas, video {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
-
 /*
   ---- ---- ---- ---- FONT-FACE DECLARATIONS ---- ---- ---- ----
 */
@@ -548,10 +547,7 @@ section.main {
   border-bottom: 1px solid white; }
 
 nav.social {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 5px 5px; }
+  margin: 5px 5px 5px 0; }
 
 nav.social a,
 #openMobileMenu {
@@ -679,6 +675,7 @@ footer.main {
   background-color: #1a1a1a;
   color: white; }
 
+/*768px*/
 @media only screen and (min-width: 48em) {
   header.main {
     position: relative;
@@ -747,7 +744,16 @@ footer.main {
   footer.main {
     margin-top: 0;
     padding: 2.5%; } }
-@media only screen and (min-width: 54em) {
+/*1000px*/
+@media only screen and (min-width: 62.5em) {
+  #wrapper {
+    width: 60em;
+    margin: 0 auto;
+  }
+  .navbar-contain{
+    width: 60em;
+    margin: 0 auto;
+  }
   section.content {
     float: left;
     width: 62.166666666666667%; }

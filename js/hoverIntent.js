@@ -1,4 +1,5 @@
 (function($){
+	var $ = jQuery;
 	/* hoverIntent by Brian Cherne */
 	$.fn.hoverIntent = function(f,g) {
 		// default configuration options

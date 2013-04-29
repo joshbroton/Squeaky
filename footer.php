@@ -13,6 +13,27 @@
                     ));
                     ?>
                 </nav>
+                <script>
+        (function(){
+            var $ = jQuery;
+                $('.sf-menu ul').superfish({
+                    delay: 1000,
+                    animation: {opacity:'show',height:'show'},
+                    speed: 'fast',
+                    dropShadows: false
+                });
+
+                $('#openMobileMenu').on('click', (function () {
+                    var menuid = $('nav.primary');
+                    if (!menuid.is(':visible')) {
+                        menuid.slideDown(300);
+                    } else {
+                        menuid.slideUp(300);
+                    };
+                })
+                );
+            })();
+        </script>
                 <?php wp_footer(); ?>
             </footer>
         </div>

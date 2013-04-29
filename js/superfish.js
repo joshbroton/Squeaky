@@ -10,7 +10,8 @@
  * CHANGELOG: http://users.tpg.com.au/j_birch/plugins/superfish/changelog.txt
  */
 
-;(function($){
+(function(){
+	var $ = jQuery;
 	$.fn.superfish = function(op){
 
 		var sf = $.fn.superfish,
@@ -118,4 +119,4 @@
 		}
 	});
 
-})(jQuery);
+})();
