@@ -7,6 +7,14 @@ function my_scripts_method() {
     wp_enqueue_script('superfish', get_template_directory_uri() . '/js/superfish.js', array('jquery'));           
 }
 add_action('wp_enqueue_scripts', 'my_scripts_method'); // For use on the Front end (ie. Theme)
+//add IE stuff after jquery loads
+function ie_stuff() {
+    echo '<!--[if lt IE 9]>
+            <script src="<?php echo get_template_directory_uri(); ?>/js/selectivizr-min.js"></script>
+            <script src="<?php echo get_template_directory_uri(); ?>/js/imgsizer.js"></script>
+            <![endif]-->';
+}
+add_action('wp_head', 'ie_stuff');
     // Remove unneeded crap from the head
     // http://digwp.com/2010/03/wordpress-functions-php-template-custom-functions/
     remove_action('wp_head', 'rsd_link');
