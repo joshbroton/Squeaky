@@ -4,6 +4,10 @@
 <!--[if (IE 8)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9" lang="en"><![endif]-->
 <!--[if gt IE 8]><!--> <html <?php language_attributes(); ?> class="no-js" lang="en"><!--<![endif]-->
 <head>
+    <!-- GOOGLE WEBFONTS -->
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+
+
     <!-- METADATA -->
         <title><?php wp_title(''); ?></title>
         <meta charset="utf-8">
@@ -51,6 +55,7 @@
 
 
     <!-- SCRIPTS -->
+        <!-- TODO: These will be properly replaced with enqueue_script as development is completed -->
         <!-- I recommend going to modernizr.com and building a custom build. This one is huge. -->
         <script src="<?php echo get_template_directory_uri(); ?>/js/modernizr.2.6.2.min.js"></script>
 
@@ -89,17 +94,15 @@
 
     <!-- OTHER -->
         <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-        <link rel="alternate" type="application/rss+xml" title="<?php bloginfo( 'name' ); ?>" href="<?php bloginfo( 'rss2_url' ); ?>" />
-        <link rel="alternate" type="application/atom+xml" title="<?php bloginfo( 'name' ); ?>" href="<?php bloginfo( 'atom_url' ); ?>" />
 
         <?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class($class); ?>>
     <div id="wrapper">
         <header class="main">
             <section class="navbar">
                 <nav class="social">
-                    <a href="http://www.twitter.com/joshbroton" class="twitter" title="Follow me on Twitter"></a><a href="http://www.joshbroton.com" class="web" title="My blog and personal info"></a><a href="https://www.github.com/joshbroton/Squeaky" class="github" title="Fork Squeaky Clean on GitHub"></a>
+                    <a href="http://www.twitter.com/joshbroton" class="twitter" title="Follow me on Twitter"></a><a href="http://www.joshbroton.com" class="web" title="My blog and personal info"></a><a href="https://www.github.com/joshbroton/Squeaky" class="github" title="Fork squeakyclean on GitHub"></a>
                 </nav>
                 <a id="openMobileMenu"></a>
             </section>

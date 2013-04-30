@@ -9,7 +9,7 @@
     remove_action('wp_head', 'feed_links_extra', 3);
     remove_action('wp_head', 'start_post_rel_link', 10, 0);
     remove_action('wp_head', 'parent_post_rel_link', 10, 0);
-    remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
+    remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 
     // Enable custom menus
     add_theme_support( 'menus' );
@@ -49,3 +49,6 @@
 
     //Remove the admin bar
     show_admin_bar(false);
+
+    // automatic feeds
+    add_theme_support( 'automatic-feed-links' );
