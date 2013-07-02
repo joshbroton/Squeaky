@@ -76,7 +76,7 @@ $tablehover: $lightgrey;
 /*
   ---- ---- ---- ---- MIXINS ---- ---- ---- ----
 */
-// Thank you to Andy Clarke for most of these (320 and Up)
+// Thank you to Andy Clarke for some of these (320 and Up)
 // @include text-overflow()
 @mixin text-overflow() {
     overflow: hidden;
@@ -168,6 +168,7 @@ $tablehover: $lightgrey;
     opacity: $opacity;
 }
 
+// Mixin for creating animations using single or "all" property transitions
 // @include transition(PROPERTY DURATION DELAY(OPT) TIMING-FUNCTION)
 @mixin transition($transition) {
     -webkit-transition: $transition;
@@ -175,6 +176,16 @@ $tablehover: $lightgrey;
     -ms-transition: $transition;
     -o-transition: $transition;
     transition: $transition;
+}
+
+// Mixin for creating animations using multiple property transitions
+// @include multi-transition("PROPERTY DURATION DELAY(OPT) TIMING-FUNCTION, PROPERTY DURATION DELAY(OPT) TIMING-FUNCTION")
+@mixin multi-transition($transition) {
+    -webkit-transition: #{$transition};
+    -moz-transition: #{$transition};
+    -ms-transition: #{$transition};
+    -o-transition: #{$transition};
+    transition: #{$transition};
 }
 
 // Object contains floated children
@@ -205,14 +216,6 @@ $tablehover: $lightgrey;
     #{$property}: -moz-calc(#{$operation});
     #{$property}: -webkit-calc(#{$operation});
     #{$property}: calc(#{$operation});
-}
-
-// Width using calc
-// @include width-calc(INT FULL WIDTH, INT MINUS)
-@mixin css3-calc($property, $fullvalue, $minus) {
-    #{$property}: -moz-calc(#{$fullvalue} - #{$minus});
-    #{$property}: -webkit-calc(#{$fullvalue} - #{$minus});
-    #{$property}: calc(#{$fullvalue} - #{$minus});
 }
 
 
