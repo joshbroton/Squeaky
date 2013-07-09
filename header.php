@@ -45,11 +45,24 @@
         <!-- <link rel="apple-touch-startup-image" sizes="768x1004" href="<?php echo get_template_directory_uri(); ?>/images/startup/startup-768x1004.png" media="screen and (min-device-width:481px) and (max-device-width:1024px) and (orientation:portrait)"> -->
 
 
-    <!-- MICROSOFT SPECIFIC -->
-        <!-- 144x144 icon if pinned to the Windows 8 start screen -->
-        <!-- <meta name="msapplication-TileImage" content="/metro-tile.png"/> -->
-        <!-- Background color of the tile. If excluded, will take the prominent color from the icon -->
-        <!-- <meta name="msapplication-TileColor" content="#015565"/> -->
+    <!-- MICROSOFT/WIN8/WIN8.1 SPECIFIC -->
+        <!-- 8.1: Caption of pinned tile -->
+        <!-- <meta name="application-name" content="Squeaky Clean WordPress Boilerplate"> -->
+        <!-- 8/8.1: Background color of the tile. If excluded, will take the prominent color from the icon -->
+        <!-- <meta name="msapplication-TileColor" content="#FFFFFF"/> -->
+        <!-- 8.1: 70x70 1x logo for "tiny" tile -->
+        <!-- <meta name="msapplication-square70x70logo" content="images/ms/tiny.png"> -->
+        <!-- 8.1: 150x150 1x logo for "small" or "square" tile -->
+        <!-- <meta name="msapplication-square150x150logo" content="images/ms/square.png"> -->
+        <!-- 8.1: 310x150 1x logo for "wide" tile -->
+        <!-- <meta name="msapplication-wide310x150logo" content="images/ms/wide.png"> -->
+        <!-- 8.1: 310x310 1x logo for "large" tile -->
+        <!-- <meta name="msapplication-square310x310logo" content="images/ms/large.png"> -->
+        <!-- 8.1: Frequency in minutes. URL of RSS feed to fetch content from. The second meta is for pulling from multiple RSS feeds. Only use ONE. -->
+        <!-- <meta name="msapplication-notification" content="frequency=60;polling-uri=http://url.to.rss"> -->
+        <!-- <meta name="msapplication-notification" content="frequency=60;polling-uri=http://url.to.rss; polling-uri2=http://url.to.second.rss; polling-uri3=http://url.to.third.rss"> -->
+        <!-- 8: 144x144 icon if pinned to the start screen -->
+        <!-- <meta name="msapplication-TileImage" content="images/ms/legacy-metro-tile.png"/> -->
 
 
     <!-- STYLESHEETS -->
