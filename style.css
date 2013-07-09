@@ -6,12 +6,6 @@
     Author URL:  http: //www.joshbroton.com
 --*/
 /*
-  ---- ---- ---- ---- VARIABLES ---- ---- ---- ----
-*/
-/*
-  ---- ---- ---- ---- MIXINS ---- ---- ---- ----
-*/
-/*
   ---- ---- ---- ---- RESET STYLESHEET ---- ---- ---- ----
 */
 html, body {
@@ -233,12 +227,12 @@ strong a {
 
 /* SELECTION */
 ::-moz-selection {
-  background-color: gray;
+  background-color: grey;
   color: white;
   text-shadow: none; }
 
 ::selection {
-  background-color: gray;
+  background-color: grey;
   color: white;
   text-shadow: none; }
 
@@ -291,7 +285,7 @@ textarea,
   margin-bottom: 1.2em;
   background-color: white;
   border: 1px solid #bfbfbf;
-  color: gray;
+  color: grey;
   font-size: .875em; }
   input[type="text"]:active, input[type="text"]:focus,
   input[type="date"]:active,
@@ -318,7 +312,7 @@ textarea,
   textarea:focus,
   .textbox:active,
   .textbox:focus {
-    border-color: gray; }
+    border-color: grey; }
 
 input[type="checkbox"],
 input[type="radio"] {
@@ -335,7 +329,7 @@ input[type="reset"] {
   width: auto;
   height: auto;
   padding: .25em .5em;
-  background-color: gray;
+  background-color: grey;
   border: 1px solid #666666;
   color: white;
   font-size: .875em;
@@ -350,8 +344,7 @@ textarea[disabled],
 input[readonly],
 select[readonly],
 textarea[readonly] {
-  -webkit-opacity: 0.5;
-  -moz-opacity: 0.5;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;
   cursor: not-allowed; }
 
