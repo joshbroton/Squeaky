@@ -6,9 +6,9 @@
     Author URL:  http: //www.joshbroton.com
 --*/
 
-/*
-  ---- ---- ---- ---- VARIABLES ---- ---- ---- ----
-*/
+
+// ---- ---- ---- ---- VARIABLES ---- ---- ---- ----
+
 // Site Colors
 $green: rgb(102,122,97); //#667a61
 
@@ -73,10 +73,13 @@ $tablehover: $lightgrey;
 
 
 
-/*
-  ---- ---- ---- ---- MIXINS ---- ---- ---- ----
-*/
+
+
+// ---- ---- ---- ---- MIXINS ---- ---- ---- ----
+
 // Thank you to Andy Clarke for some of these (320 and Up)
+
+// Ellipsis at end of line, no wrap.
 // @include text-overflow()
 @mixin text-overflow() {
     overflow: hidden;
