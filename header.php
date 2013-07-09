@@ -11,7 +11,9 @@
     <!-- METADATA -->
         <title><?php wp_title(''); ?></title>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <!-- I removed id=edge,chrome=1 meta tag. IE bugs stop it from working if there is a conditional above it, 
+             which there is around the <html> tag. Add it to the server response by following the guide at
+             http://joshbroton.com/quick-fix-forcing-internet-explorer-8-out-of-compatibility-mode/ -->
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
