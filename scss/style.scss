@@ -163,8 +163,7 @@ $tablehover: $lightgrey;
 
 // @include opacity(DECIMAL 0-1)
 @mixin opacity($opacity: .5) {
-    -webkit-opacity: $opacity;
-    -moz-opacity: $opacity;
+    filter: unquote("progid:DXImageTransform.Microsoft.Alpha(Opacity=#{round($opacity * 100)})");
     opacity: $opacity;
 }
 
