@@ -142,3 +142,11 @@
     #{$property}: -webkit-calc(#{$operation});
     #{$property}: calc(#{$operation});
 }
+
+// Horizontally center a block-level element
+// @include center-block()
+@mixin center-block() {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
