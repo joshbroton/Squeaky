@@ -1,0 +1,74 @@
+section[role='complimentary'] {
+    border: 1px solid $lightgrey;
+    padding: 5%;
+
+    article {
+
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    hr {
+        width: 60%;
+        margin: 2em auto;
+        background-color: $lightgrey;
+
+        &:last-child {
+            display: none;
+        }
+    }
+}
+
+@media only screen and (min-width: 48em) {  //approximate min-width: 768px
+    section[role='complimentary'] {
+        margin-top: 2.5%;
+        padding: 2.5%;
+        @include clearfix();
+
+        article {
+            float: left;
+            width: 47.5%;
+            margin: 0 5% 0 0;
+            padding-right: 5%;
+            border-right: 1px solid $lightgrey;
+
+            &:nth-child(2n+3) {
+                margin: 0;
+                border-right: 0;
+            }
+        }
+
+        hr {
+            display: none;
+        }
+    }
+}
+
+@media only screen and (min-width: 54em) {  //approximate min-width: 992px
+    section[role='complimentary'] {
+        float: right;
+        width: 33.3333333333333%;
+        padding: 0;
+        border: 0;
+
+        article {
+            float: none;
+            width: 100%;
+            margin: 0 0 5% 0;
+            padding: 0 0 5% 0;
+            border-right: 0;
+        }
+
+        hr {
+            display: block;
+            margin: 1em auto;
+
+        }
+    }
+}
+
+@media only screen and (min-width: 84em) { //approximate min-width: 1340px
+
+}

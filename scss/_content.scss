@@ -1,0 +1,21 @@
+section.main {
+    width: 100%;
+    padding: 5%;
+}
+
+@media only screen and (min-width: 48em) {  //approximate min-width: 768px
+    section.main {
+        padding: 2.5%;
+    }
+}
+
+@media only screen and (min-width: 54em) {  //approximate min-width: 992px
+    section.content {
+        float: left;
+        width: 62.166666666666667%;
+    }
+}
+
+@media only screen and (min-width: 84em) { //approximate min-width: 1340px
+
+}

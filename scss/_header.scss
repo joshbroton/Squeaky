@@ -1,0 +1,30 @@
+header.main {
+    padding: 5%;
+}
+
+    .logo {
+        width: 100%;
+
+        h1 {
+            margin-bottom: 0;
+        }
+    }
+
+@media only screen and (min-width: 48em) {  //approximate min-width: 768px
+    header.main {
+        position: relative;
+        padding: 2.5%;
+    }
+
+        .logo {
+            padding: 0;
+        }
+}
+
+@media only screen and (min-width: 54em) {  //approximate min-width: 992px
+
+}
+
+@media only screen and (min-width: 84em) { //approximate min-width: 1340px
+
+}

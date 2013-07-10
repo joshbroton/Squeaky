@@ -1,0 +1,63 @@
+// ---- ---- ---- ---- VARIABLES ---- ---- ---- ----
+
+// Site Colors
+$green: rgb(102,122,97); //#667a61
+
+// Greys
+$black: rgb(0,0,0); //#000000
+$darkergrey: lighten($black, 10%);
+$darkgrey: lighten($black, 25%); //#404040
+$midgrey: lighten($black, 50%); //#808080
+$lightgrey: lighten($black, 75%); //#bfbfbf
+$lightergrey: lighten($black, 90%); //#e6e6e6
+$white: rgb(255,255,255); //#ffffff
+
+// Root
+$bodycolor: $white;
+$textcolor: $black;
+$columnmargin: 10px;
+$gutter: 20px;
+$warningcolor: red;
+
+// Typography
+$basefont: PT Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+$basefontsize: 100%;
+$baselineheight: 1.2em;
+$headingfont: PT Serif, Cambria, Georgia, Times, "Times New Roman", serif;
+$headinglineheight: 1.35em;
+$headingfontweight: bold;
+$headingcolor: $textcolor;
+$codefont: PT Mono, Monaco, Courier New, monospace;
+
+// Links
+$linkcolor: rgb(139,149,179); //#8B95B3
+$linkhover: darken($linkcolor,7%);
+$linkvisited: darken($linkcolor,14%);
+$linkfocus: darken($linkcolor,21%);
+
+// Forms
+$textboxbackground: $white;
+$textboxbordercolor: $lightgrey;
+$textboxbordercoloractive: $midgrey;
+$textboxborderwidth: 1px;
+$textboxborderstyle: solid;
+$textboxcolor: $midgrey;
+$textboxplaceholdercolor: $lightgrey;
+$textboxpadding: $gutter / 4;
+
+$buttonbackground: $midgrey;
+$buttonbordercolor: darken($buttonbackground,10%);
+$buttonborderwidth: 1px;
+$buttonborderstyle: solid;
+$buttoncolor: $white;
+$buttonpadding: .25em .75em;
+
+// Tables
+$tablebackground: transparent;
+$tablestripe: $lightergrey;
+$tablefontsize: .875em;
+$tablelineheight: 1.4em;
+$tableborderwidth: 1px;
+$tableborderstyle: solid;
+$tablebordercolor: $lightgrey;
+$tablehover: $lightgrey;

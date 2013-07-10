@@ -1,0 +1,22 @@
+footer.main {
+    width: 100;
+    margin-top: 2em;
+    padding: 2em 5%;
+    background-color: $darkergrey;
+    color: white;
+}
+
+@media only screen and (min-width: 48em) {  //approximate min-width: 768px
+    footer.main {
+        margin-top: 0;
+        padding: 2.5%;
+    }
+}
+
+@media only screen and (min-width: 54em) {  //approximate min-width: 992px
+
+}
+
+@media only screen and (min-width: 84em) { //approximate min-width: 1340px
+
+}

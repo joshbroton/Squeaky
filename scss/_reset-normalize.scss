@@ -1,0 +1,458 @@
+/*
+  ---- ---- ---- ---- RESET STYLESHEET ---- ---- ---- ----
+*/
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, cite, code, del, dfn, em, img, q, s, samp, small, strike, strong, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, button, table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 100%;
+    line-height: 1.2;
+    font-family: inherit;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+    display: block;
+}
+
+audio[controls], canvas, video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*
+  ---- ---- ---- ---- ALL VIEWPORTS AND SIZES ---- ---- ---- ----
+*/
+/* BODY */
+@-webkit-viewport {
+    width: device-width;
+}
+
+@-moz-viewport {
+    width: device-width;
+}
+
+@-ms-viewport {
+    width: device-width;
+}
+
+@-o-viewport {
+    width: device-width;
+}
+
+@viewport {
+    width: device-width;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    background: $bodycolor;
+    -webkit-overflow-scrolling: touch;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    font-family: $basefont;
+    font-size: $basefontsize;
+    line-height: $baselineheight;
+    color: $textcolor;
+}
+
+.clearfix {
+    @include clearfix();
+}
+
+
+/* TYPOGRAPHY */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+    font-family: $headingfont;
+    font-weight: $headingfontweight;
+    color: $headingcolor;
+    line-height: $headinglineheight;
+    text-rendering:  optimizeLegibility;
+}
+
+h1,
+.h1 {
+    margin-bottom: $baselineheight / 1.5;
+    font-size: 2em;
+}
+
+h2,
+.h2 {
+    margin-bottom: $baselineheight / 1.5;
+    font-size: 1.5em;
+}
+
+h3,
+.h3 {
+    margin-bottom: $baselineheight / 1.75;
+    font-size: 1.25em;
+}
+
+h4,
+.h4 {
+    margin-bottom: $baselineheight / 1.75;
+    font-size: 1.125em;
+}
+
+h5,
+.h5 {
+    margin-bottom: $baselineheight / 2;
+    font-size: 1em;
+}
+
+h6,
+.h6 {
+    margin-bottom: $baselineheight / 2;
+    font-size: 1em;
+    font-weight: normal;
+}
+
+p,
+ol,
+ul,
+dl,
+address {
+    margin-bottom: $baselineheight;
+    line-height: $baselineheight * 1.2;
+}
+
+small {
+    font-size: .875em;
+}
+
+ul,
+ol {
+    padding: 0 0 0 $gutter;
+}
+
+blockquote {
+    margin: 0 $gutter $baselineheight $gutter - 5px;
+    border-left: 5px solid $lightgrey;
+    font-family: $headingfont;
+    font-style: italic;
+}
+
+dl,
+dd {
+    margin-bottom: $baselineheight
+}
+
+dt {
+    font-weight: bold;
+}
+
+b,
+strong {
+    font-weight:  bold;
+
+    a {
+        font-weight: bold;
+    }
+}
+
+dfn,
+em {
+    font-style: italic;
+}
+
+ins {
+    background-color: $lightergrey;
+    color: $warningcolor;
+    text-decoration: none;
+}
+
+mark {
+    background-color: $lightergrey;
+    color: $warningcolor;
+    font-style: italic;
+    font-weight: bold;
+}
+
+pre,
+code,
+kdb,
+samp {
+    padding: $gutter / 4;
+    background-color: $lightergrey;
+    font-family: $codefont;
+    font-size: .875em;
+}
+
+pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+sub,
+sup {
+    position: relative;
+    font-size: .75em;
+    line-height: 0;
+    vertical-align: $baselineheight;
+}
+
+sup {
+    top: -.5em;
+}
+
+sub {
+    bottom: -.25em;
+}
+
+/* LINKS */
+a {
+    color: $linkcolor;
+    text-decoration: none;
+    cursor:  pointer;
+
+    &:hover {
+        color: $linkhover;
+        text-decoration: underline;
+        border: 0;
+        outline: 0;
+    }
+
+    &:visited {
+        color: $linkvisited;
+    }
+
+    &:focus,
+    &:active {
+        color: $linkfocus;
+        border: 0;
+        outline: 0;
+    }
+
+    img {
+        border: 0;
+        outline: 0;
+    }
+}
+
+strong a {
+    font-weight:  bold;
+}
+
+/* SELECTION */
+::-moz-selection {
+    background-color: $midgrey;
+    color: $white;
+    text-shadow: none;
+}
+
+::selection {
+    background-color: $midgrey;
+    color: $white;
+    text-shadow: none;
+}
+
+/* ELEMENTS */
+hr {
+    display: block;
+    margin: 1em 0;
+    padding: 0;
+    height: 1px;
+    border: 0;
+    background-color: $lightgrey;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: middle;
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+}
+
+figure {
+    margin-bottom: $baselineheight;
+}
+
+figcaption {
+    display: block;
+    margin: 0 0 $baselineheight 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+/* FORMS */
+label {
+    font-size: .875em;
+    color: $darkgrey;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="url"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="file"],
+select,
+textarea,
+.textbox {
+    display: block;
+    width: 100%;
+    max-width: 768px;
+    padding: $textboxpadding;
+    margin-bottom: $baselineheight;
+    background-color: $textboxbackground;
+    border: $textboxborderwidth $textboxborderstyle $textboxbordercolor;
+    color: $textboxcolor;
+    font-size: .875em;
+
+    &:active,
+    &:focus {
+        border-color: $textboxbordercoloractive;
+    }
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    margin: 3px 0;
+    padding: 0;
+    *width: 13px;
+    *height: 13px;
+}
+
+button,
+.button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+    width: auto;
+    height: auto;
+    padding: .25em .5em;
+    background-color: $buttonbackground;
+    border: $buttonborderwidth $buttonborderstyle $buttonbordercolor;
+    color: $buttoncolor;
+    font-size: .875em;
+    cursor: pointer;
+}
+
+input[type="hidden"] {
+    display: none;
+}
+
+input[disabled],
+select[disabled],
+textarea[disabled],
+input[readonly],
+select[readonly],
+textarea[readonly] {
+    @include opacity(.5);
+    cursor: not-allowed;
+}
+
+::-webkit-input-placeholder,
+:-moz-placeholder,
+:-ms-input-placeholder {
+    color: $textboxplaceholdercolor;
+    font-size: .875em;
+}
+
+/* BUTTON SIZES */
+.button-xl {
+    padding: .875em 1.75em;
+    font-size: 1.25em;
+    @include border-radius(6px);
+}
+
+.button-lg {
+    padding: .5em 1em;
+    font-size: 1em;
+    @include border-radius(5px);
+}
+
+.button-med {
+    padding: .375em .75em;
+    font-size: .875em;
+    line-height: 1em;
+    @include border-radius(4px);
+}
+
+.button-xs {
+    padding: .25em .5em;
+    font-size: .75em;
+    line-height: .875em;
+    @include border-radius(3px);
+}
+
+/* TABLES */
+table {
+    height: 100%;
+    width: 100%;
+    margin-bottom: $baselineheight / 2;
+    background-color: $tablebackground;
+    border-spacing: 0;
+}
+
+th,
+td {
+    padding: 0 .5em;
+    vertical-align: middle;
+    border-top:  $tableborderwidth $tableborderstyle $tablebordercolor;
+    line-height: $baselineheight;
+    text-align: left;
+    font-size: .875em;
+}
+
+th {
+    font-weight: bold;
+}
+
+thead th {
+    vertical-align: bottom;
+}
+
+thead:first-child tr:first-child th,
+thead:first-child tr-first-child td {
+    border-top: 0;
+}
+
+tbody tr td,
+tbody tr th {
+    @include transition(background-color .25s 0 ease);
+}
+
+tbody tr:hover td,
+tbody tr:hover th {
+    background-color: $tablehover;
+}
+
+.table-striped {
+    tbody tr:nth-child(odd) td,
+    tbody tr:nth-child(odd) th {
+        background-color: $tablestripe;
+    }
+}
