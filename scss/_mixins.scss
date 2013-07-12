@@ -130,6 +130,8 @@
 // Image Replacement
 // @include hide-text()
 @mixin hide-text() {
+    font: 0/0 a;
+    text-shadow: none;
     text-indent: 100%;
     white-space: nowrap;
     overflow: hidden;

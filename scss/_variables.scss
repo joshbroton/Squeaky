@@ -1,63 +1,72 @@
 // ---- ---- ---- ---- VARIABLES ---- ---- ---- ----
 
 // Site Colors
-$green: rgb(102,122,97); //#667a61
+$sqGrey: rgb(54,75,76); //#364B4C
+$sqDarkGrey: darken($sqGrey, 10%); //#202e2e
+$sqMidGrey: lighten($sqGrey, 20%);
+$sqLightGrey: lighten($sqGrey, 40%);
+$sqBlueGreen: rgb(12,85,92); //#0C555C
+$sqGreen: rgb(204,223,204); //#CCDFCC
+$sqWhite: lighten($sqGreen, 20%);
+$sqRed: rgb(255,103,97); //#FF6761
 
 // Greys
 $black: rgb(0,0,0); //#000000
-$darkergrey: lighten($black, 10%);
-$darkgrey: lighten($black, 25%); //#404040
-$midgrey: lighten($black, 50%); //#808080
-$lightgrey: lighten($black, 75%); //#bfbfbf
-$lightergrey: lighten($black, 90%); //#e6e6e6
+$darkerGrey: lighten($black, 10%);
+$darkGrey: lighten($black, 25%); //#404040
+$midGrey: lighten($black, 50%); //#808080
+$lightGrey: lighten($black, 75%); //#bfbfbf
+$lighterGrey: lighten($black, 90%); //#e6e6e6
 $white: rgb(255,255,255); //#ffffff
 
 // Root
-$bodycolor: $white;
-$textcolor: $black;
-$columnmargin: 10px;
-$gutter: 20px;
-$warningcolor: red;
+$bodyColor: $sqGrey;
+$textColor: $sqWhite;
+$columnMargin: .5em;
+$gutter: 1em;
+$warningColor: red;
 
 // Typography
-$basefont: PT Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
-$basefontsize: 100%;
-$baselineheight: 1.2em;
-$headingfont: PT Serif, Cambria, Georgia, Times, "Times New Roman", serif;
-$headinglineheight: 1.35em;
-$headingfontweight: bold;
-$headingcolor: $textcolor;
-$codefont: PT Mono, Monaco, Courier New, monospace;
+$baseFont: 'ABeeZee', sans-serif;
+$baseFontSize: 125%;
+$baselineHeight: 1.2em;
+$headingFont: 'Fauna One', serif;
+$headingLineHeight: 1.35em;
+$headingFontWeight: bold;
+$headingColor: $sqGreen;
+$headingTextShadow: $sqMidGrey 1px 1px;
+$codeFont: Monaco, Courier New, monospace;
+$logoFont: 'Architects Daughter', sans-serif;
 
 // Links
-$linkcolor: rgb(139,149,179); //#8B95B3
-$linkhover: darken($linkcolor,7%);
-$linkvisited: darken($linkcolor,14%);
-$linkfocus: darken($linkcolor,21%);
+$linkColor: $sqRed; //#8B95B3
+$linkHover: darken($linkColor,7%);
+$linkVisited: darken($linkColor,14%);
+$linkFocus: darken($linkColor,21%);
 
 // Forms
-$textboxbackground: $white;
-$textboxbordercolor: $lightgrey;
-$textboxbordercoloractive: $midgrey;
-$textboxborderwidth: 1px;
-$textboxborderstyle: solid;
-$textboxcolor: $midgrey;
-$textboxplaceholdercolor: $lightgrey;
-$textboxpadding: $gutter / 4;
+$textboxBackground: $sqGreen;
+$textboxBorderColor: $sqBlueGreen;
+$textboxBorderColorActive: $sqRed;
+$textboxBorderWidth: 1px;
+$textboxBorderStyle: solid;
+$textboxColor: $sqGrey;
+$textboxPlaceholderColor: $sqMidGrey;
+$textboxPadding: $gutter / 4;
 
-$buttonbackground: $midgrey;
-$buttonbordercolor: darken($buttonbackground,10%);
-$buttonborderwidth: 1px;
-$buttonborderstyle: solid;
-$buttoncolor: $white;
-$buttonpadding: .25em .75em;
+$buttonBackground: $sqDarkGrey;
+$buttonBorderColor: darken($buttonBackground,10%);
+$buttonBorderWidth: 1px;
+$buttonBorderStyle: solid;
+$buttonColor: $sqGreen;
+$buttonPadding: .25em .75em;
 
 // Tables
-$tablebackground: transparent;
-$tablestripe: $lightergrey;
-$tablefontsize: .875em;
-$tablelineheight: 1.4em;
-$tableborderwidth: 1px;
-$tableborderstyle: solid;
-$tablebordercolor: $lightgrey;
-$tablehover: $lightgrey;
+$tableBackground: transparent;
+$tableStripe: $sqLightGrey;
+$tableFontSize: .875em;
+$tableLineHeight: 1.4em;
+$tableBorderWidth: 1px;
+$tableBorderStyle: solid;
+$tableBorderColor: $sqLightGrey;
+$tableHover: transparent;

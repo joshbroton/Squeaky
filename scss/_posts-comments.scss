@@ -1,11 +1,5 @@
 .post {
-    hr {
-        margin: 2em 20%;
-        width: 60%;
-    }
-}
-
-    .article-header {
+    header {
         h1 {
             margin-bottom: 0;
 
@@ -13,15 +7,27 @@
                 font-weight: bold;
             }
         }
+    }
 
-        .byline {
-            margin: .5em 0;
-            font-size: .875em;
+    hr {
+        margin: 2em 20%;
+        width: 60%;
+    }
+
+    footer {
+        padding: .5em;
+        background: $sqDarkGrey;
+        font-size: .75em;
+    }
+}
+
+    .byline {
+        margin: .5em 0;
+        font-size: .75em;
+        font-style: italic;
+
+        a {
             font-style: italic;
-
-            a {
-                font-style: italic;
-            }
         }
     }
 
@@ -31,22 +37,69 @@
         margin-top: 1em;
         margin-bottom: .5em;
         padding: 5px;
-        border: 1px solid $lightgrey;
-    }
-
-    .article-footer {
-        padding: .5em;
-        background-color: $lightergrey;
-        font-size: .875em;
+        border: 1px solid $lightGrey;
     }
 
 .comments {
-    margin-top: 1em;
+    margin-top: 2em;
+    padding-top: 2em;
+    border-top: 1px solid $sqMidGrey;
 
     input[type="text"] {
         margin-bottom: 0;
     }
+
+    a:visited {
+        color: $sqRed;
+    }
 }
+
+    .comment-list {
+        padding: 0;
+
+        li {
+            list-style: none;
+        }
+    }
+
+        .comment {
+            p {
+                clear: both;
+            }
+
+            .children {
+                padding: 0;
+                margin: 0;
+
+                .comment {
+                    padding-left: 2em;
+                    border-bottom: 0;
+                }
+            }
+        }
+
+            .comment-body {
+                padding: .25em 0 1.5em 0;
+                border-top: 2px solid $sqDarkGrey;
+            }
+
+            .comment-author-admin {
+                .comment-body {
+                    border-color: darken($sqRed, 14%);
+                }
+            }
+
+                .comment-author,
+                .comment-meta {
+                    display: inline-block;
+                    line-height: 32px;
+                }
+
+                .comment-meta {
+                    float: right;
+                    padding-left: 1em;
+                    font-size: .75em;
+                }
 
 .wp-prev-next {
     margin-bottom: 2em;

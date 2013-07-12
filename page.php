@@ -20,18 +20,13 @@
                             the_content();
                             ?>
                         </section>
-                        <footer class="article-footer">
-                            <section class="categories">
-                                Categories: <?php the_category(', '); ?>
-                            </section>
-                            <section class="tags">
-                                <?php the_tags('<span class="tags-title">Tags:</span> ', ', ', ''); ?>
-                            </section>
-                        </footer>
+                        <?php
+                        // If comments are open or we have at least one comment, load up the comment template
+                        if ( comments_open() && get_comments_number() != 0 ) : ?>
                         <section class="comments">
                             <?php comments_template(); ?>
                         </section>
-                        <hr />
+                        <?php endif; ?>
                     </article>
                     <?php endwhile; ?>
                     <nav class="wp-prev-next">

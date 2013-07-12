@@ -66,6 +66,7 @@
 
 
     <!-- STYLESHEETS -->
+    <link href='http://fonts.googleapis.com/css?family=Fauna+One|ABeeZee|Architects+Daughter' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 
 
@@ -113,27 +114,23 @@
         <?php wp_head(); ?>
 </head>
 <body <?php body_class($class); ?>>
-    <div id="wrapper">
+    <div class="wrapper">
         <header class="main">
-            <section class="navbar">
-                <nav class="social">
-                    <a href="http://www.twitter.com/joshbroton" class="twitter" title="Follow me on Twitter"></a><a href="http://www.joshbroton.com" class="web" title="My blog and personal info"></a><a href="https://www.github.com/joshbroton/Squeaky" class="github" title="Fork squeakyclean on GitHub"></a>
-                </nav>
-                <a id="openMobileMenu"></a>
-            </section>
+            <h1>
+                <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>">AR<span class="full-name">Aspects/References</span><span class="blog-description">&nbsp;=&nbsp;webNerd.thoughtsAndMusings</span></a>
+            </h1>
+            <a id="openMobileMenu" class="icon-menu"></a>
+            <nav class="social">
+                <a href="http://www.twitter.com/joshbroton" class="icon-twitter" title="Follow me on Twitter"></a><a href="http://www.joshbroton.com" class="icon-wordpress" title="My blog and personal info"></a><a href="https://www.github.com/joshbroton/Squeaky" class="icon-github" title="Fork squeakyclean on GitHub"></a>
+            </nav>
             <nav class="primary">
                 <?php wp_nav_menu( array(
-                'container' => 'ul',
-                'menu_class' => 'sf-menu',
-                'menu_id' => 'main_nav',
-                'depth' => 0,
-                'theme_location' => 'header_menu'
-            ));
+                    'container' => 'ul',
+                    'menu_class' => 'sf-menu',
+                    'menu_id' => 'main_nav',
+                    'depth' => 0,
+                    'theme_location' => 'header_menu'
+                ));
                 ?>
             </nav>
-            <section class="logo">
-                <h1>
-                    <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><img src="<?php bloginfo('template_url'); ?>/images/logo.png" alt="<?php bloginfo('description'); ?>" /></a>
-                </h1>
-            </section>
         </header>

@@ -1,103 +1,101 @@
-.navbar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 50px;
-    background-color: $green;
-    border-bottom: 1px solid white;
+nav ul {
+    margin: 0;
 }
 
-    nav.social {
-        position: absolute;
-        top: 0;
-        left: 0;
-        margin: 5px 5px;
-    }
+nav.social {
+    float: right;
+    font-size: 1.5em;
+    margin-right: .5em;
 
-    nav.social a,
-    #openMobileMenu{
+    a {
         display: inline-block;
-        width: 40px;
-        height: 40px;
-        background-repeat: no-repeat;
-        background-position: left top;
-        @include transition(background-position 0.2s ease);
+        padding: 0 .25em;
+        color: $sqGreen;
+        line-height: 50px;
+        background-position: 50% 50%;
+        @include transition(color .2s);
 
         &:hover {
-            background-position: left -40px;
+            color: $sqWhite;
+            text-decoration: none;
         }
     }
+}
 
-        .twitter {
-            background-image: url(images/twitter-logo.png);
-        }
+#openMobileMenu {
+    float: right;
+    display: inline-block;
+    right: 0;
+    top: 0;
+    width: 40px;
+    line-height: 50px;
+    font-size: 1.5em;
+    color: $sqGreen;
+    @include transition(color .2s);
 
-        .web {
-            background-image: url(images/web-logo.png);
-        }
+    &:hover {
+        color: $sqWhite;
+        text-decoration: none;
+    }
+}
 
-        .github {
-            background-image: url(images/github-logo.png);
-        }
+nav.primary {
+    position: absolute;
+    display: none;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    background: $sqDarkGrey;
 
-    #openMobileMenu {
-        position: absolute;
-        display: inline-block;
-        background-image: url(images/menu-icon.png);
-        right: 0;
-        top: 0;
-        margin: 5px;
+    ul {
+        padding: 0;
     }
 
-    nav.primary {
-        position: absolute;
-        display: none;
-        left: 0;
-        top: 50px;
+    li {
         width: 100%;
-        background: $green;
+        list-style: none;
+        border-bottom: 1px solid $sqGreen;
 
-        ul {
-            margin-bottom: 0;
-            padding: 0;
-        }
-
-        li {
-            width: 100%;
-            list-style: none;
-            border-bottom: 1px solid white;
-
-            &:last-child {
-                border-bottom: 0;
-            }
-        }
-
-        a {
-            display: block;
-            padding: 20px;
-            color: white;
-            font-weight: bold;
-
-            &:hover {
-                background-color: lighten($green, 5%);
-            }
+        &:last-child {
+            border-bottom: 0;
         }
     }
+
+    a {
+        display: block;
+        padding: 20px;
+        color: $sqGreen;
+        font-weight: bold;
+        @include transition(color .2s);
+
+        &:hover {
+            background-color: lighten($sqDarkGrey, 5%);
+            color: $sqWhite;
+        }
+    }
+}
 
 @media only screen and (min-width: 48em) {  //approximate min-width: 768px
     #openMobileMenu {
+        float: right;
         display: none;
     }
 
+    nav.social {
+        margin-right: .25em;
+        font-size: 1.25em;
+    }
+
     nav.primary {
-        display: block !important;
+        display: block !important; //Important in case user closed with jquery before increasing browser width
+        position: relative;
+        float: right;
         right: 2.5%;
         top: auto;
         bottom: 2.5%;
         width: auto;
         background: transparent;
-        text-align: right;
+        font-size: .625em;
 
         li {
             display: inline-block;
@@ -107,8 +105,7 @@
 
         a,
         span {
-            padding: 0 .5em;
-            color: $textcolor;
+            padding: 1.5em .5em;
 
             &:hover {
                 background-color: transparent;

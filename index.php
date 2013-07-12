@@ -28,9 +28,6 @@
                                     <?php the_tags('<span class="tags-title">Tags:</span> ', ', ', ''); ?>
                                 </section>
                             </footer>
-                            <section class="comments">
-                                <?php comments_template(); ?>
-                            </section>
                             <hr />
                         </article>
                     <?php endwhile; ?>

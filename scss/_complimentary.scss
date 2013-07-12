@@ -1,5 +1,5 @@
 section[role='complimentary'] {
-    border: 1px solid $lightgrey;
+    border: 1px solid $lightGrey;
     padding: 5%;
 
     article {
@@ -7,13 +7,13 @@ section[role='complimentary'] {
     }
 
     h1 {
-        font-size: 1.5em;
+        font-size: 1.25em;
     }
 
     hr {
         width: 60%;
         margin: 2em auto;
-        background-color: $lightgrey;
+        background-color: $lightGrey;
 
         &:last-child {
             display: none;
@@ -29,13 +29,14 @@ section[role='complimentary'] {
 
         article {
             float: left;
-            width: 47.5%;
-            margin: 0 5% 0 0;
+            width: 50%;
+            margin: 0;
             padding-right: 5%;
-            border-right: 1px solid $lightgrey;
+            border-right: 1px solid $lightGrey;
 
             &:nth-child(2n+3) {
                 margin: 0;
+                padding-left: 5%;
                 border-right: 0;
             }
         }
@@ -49,9 +50,10 @@ section[role='complimentary'] {
 @media only screen and (min-width: 54em) {  //approximate min-width: 992px
     section[role='complimentary'] {
         float: right;
-        width: 33.3333333333333%;
+        width: 300px;
         padding: 0;
         border: 0;
+        margin-top: 0;
 
         article {
             float: none;
