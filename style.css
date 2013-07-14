@@ -57,7 +57,7 @@ audio[controls], canvas, video {
 html {
   width: 100%;
   height: 100%;
-  background: #364b4c;
+  background: #404546;
   -webkit-overflow-scrolling: touch;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%; }
@@ -93,7 +93,7 @@ h6 {
   color: #ccdfcc;
   line-height: 1.35em;
   text-rendering: optimizeLegibility;
-  text-shadow: #608688 1px 1px; }
+  text-shadow: #717a7b 1px 1px; }
 
 h1,
 .h1 {
@@ -142,9 +142,12 @@ ol {
   margin-left: 1em;
   padding: 0 0 0 1em; }
 
+li {
+  margin-bottom: .375em; }
+
 blockquote {
   margin: 0 1em 1.2em 0.75em;
-  border-left: 5px solid #98b5b6;
+  border-left: 5px solid #a5acad;
   font-family: "Fauna One", serif;
   font-style: italic; }
 
@@ -185,10 +188,11 @@ pre,
 code,
 kdb,
 samp {
+  display: block;
   margin-bottom: 1em;
   padding: 0.25em;
-  background-color: #212e2e;
-  border: 1px solid #608688;
+  background-color: #282b2b;
+  border: 1px solid #717a7b;
   font-family: Monaco, Courier New, monospace;
   font-size: .875em; }
 
@@ -212,18 +216,18 @@ sub {
 
 /* LINKS */
 a {
-  color: #ff6761;
+  color: #ff221a;
   text-decoration: none;
   cursor: pointer; }
   a:hover {
-    color: #ff453d;
+    color: #ff0900;
     text-decoration: underline;
     border: 0;
     outline: 0; }
   a:visited {
-    color: #ff221a; }
+    color: #e60800; }
   a:focus, a:active {
-    color: #f50900;
+    color: #cd0700;
     border: 0;
     outline: 0; }
   a img {
@@ -293,7 +297,7 @@ textarea,
   margin-bottom: 1.2em;
   background-color: #ccdfcc;
   border: 1px solid #0c555c;
-  color: #364b4c;
+  color: #404546;
   font-size: .875em; }
   input[type="text"]:active, input[type="text"]:focus,
   input[type="date"]:active,
@@ -320,7 +324,7 @@ textarea,
   textarea:focus,
   .textbox:active,
   .textbox:focus {
-    border-color: #ff6761; }
+    border-color: #ff221a; }
 
 input[type="checkbox"],
 input[type="radio"] {
@@ -337,8 +341,8 @@ input[type="reset"] {
   width: auto;
   height: auto;
   padding: .25em .5em;
-  background-color: #212e2e;
-  border: 1px solid #0c1010;
+  background-color: #282b2b;
+  border: 1px solid #0f1011;
   color: #ccdfcc;
   font-size: .875em;
   cursor: pointer; }
@@ -359,7 +363,7 @@ textarea[readonly] {
 ::-webkit-input-placeholder,
 :-moz-placeholder,
 :-ms-input-placeholder {
-  color: #608688;
+  color: #717a7b;
   font-size: .875em; }
 
 /* BUTTON SIZES */
@@ -453,7 +457,7 @@ th,
 td {
   padding: 0 .5em;
   vertical-align: middle;
-  border-top: 1px solid #98b5b6;
+  border-top: 1px solid #a5acad;
   line-height: 1.2em;
   text-align: left;
   font-size: .875em; }
@@ -482,7 +486,7 @@ tbody tr:hover th {
 
 .table-striped tbody tr:nth-child(odd) td,
 .table-striped tbody tr:nth-child(odd) th {
-  background-color: #98b5b6; }
+  background-color: #a5acad; }
 
 @font-face {
   font-family: 'icons';
@@ -540,7 +544,7 @@ header.main {
   top: 0;
   width: 100%;
   height: 50px;
-  background-color: #212e2e;
+  background-color: #282b2b;
   -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
@@ -553,7 +557,7 @@ header.main {
       display: block;
       height: 50px;
       background: url(images/slash-logo.png) no-repeat 15px 50%;
-      color: #98b5b6;
+      color: #a5acad;
       font-family: "Architects Daughter", sans-serif;
       line-height: 50px;
       overflow: hidden; }
@@ -627,7 +631,7 @@ nav.primary {
   left: 0;
   top: 50px;
   width: 100%;
-  background: #212e2e; }
+  background: #282b2b; }
   nav.primary ul {
     padding: 0; }
   nav.primary li {
@@ -647,7 +651,7 @@ nav.primary {
     -o-transition: color 0.2s;
     transition: color 0.2s; }
     nav.primary a:hover {
-      background-color: #2b3c3d;
+      background-color: #343839;
       color: white; }
 
 @media only screen and (min-width: 48em) {
@@ -716,18 +720,19 @@ section.main {
     padding: 2em; }
 
   .content {
-    width: -moz-calc(100% - (300px + 2em));
-    width: -webkit-calc(100% - (300px + 2em));
-    width: calc(100% - (300px + 2em));
+    width: -moz-calc(100% - (300px + 4em));
+    width: -webkit-calc(100% - (300px + 4em));
+    width: calc(100% - (300px + 4em));
     float: left; }
 
   .no-csscalc .content {
     width: 61.6666666666666%; } }
 section[role='complimentary'] {
   border: 1px solid #bfbfbf;
-  padding: 5%; }
+  padding: 5%;
+  font-size: .875em; }
   section[role='complimentary'] h1 {
-    font-size: 1.25em; }
+    font-size: 1.375em; }
   section[role='complimentary'] hr {
     width: 60%;
     margin: 2em auto;
@@ -767,9 +772,12 @@ section[role='complimentary'] {
     section[role='complimentary'] article {
       float: none;
       width: 100%;
-      margin: 0 0 5% 0;
-      padding: 0 0 5% 0;
+      margin: 0;
+      padding: 0;
       border-right: 0; }
+      section[role='complimentary'] article:nth-child(2n+3) {
+        margin: 0;
+        padding: 0; }
     section[role='complimentary'] hr {
       display: block;
       margin: 1em auto; } }
@@ -782,7 +790,7 @@ section[role='complimentary'] {
   width: 60%; }
 .post footer {
   padding: .5em;
-  background: #212e2e;
+  background: #282b2b;
   font-size: .75em; }
 
 .byline {
@@ -801,16 +809,15 @@ section[role='complimentary'] {
   border: 1px solid #bfbfbf; }
 
 .comments {
-  margin-top: 2em;
-  padding-top: 2em;
-  border-top: 1px solid #608688; }
+  margin-top: 2em; }
   .comments input[type="text"] {
     margin-bottom: 0; }
   .comments a:visited {
-    color: #ff6761; }
+    color: #ff221a; }
 
 .comment-list {
-  padding: 0; }
+  padding: 0;
+  margin: 0; }
   .comment-list li {
     list-style: none; }
 
@@ -825,10 +832,10 @@ section[role='complimentary'] {
 
 .comment-body {
   padding: .25em 0 1.5em 0;
-  border-top: 2px solid #212e2e; }
+  border-top: 2px solid #282b2b; }
 
 .comment-author-admin .comment-body {
-  border-color: #ff221a; }
+  border-color: #d20700; }
 
 .comment-author,
 .comment-meta {
@@ -870,11 +877,20 @@ section[role='complimentary'] {
 footer.main {
   width: 100;
   margin-top: 2em;
-  padding: 2em 5%;
-  background-color: #1a1a1a;
-  color: white; }
+  padding: .5em;
+  background-color: #282b2b;
+  color: white;
+  font-size: .75em; }
 
 @media only screen and (min-width: 48em) {
   footer.main {
-    margin-top: 0;
-    padding: 2.5%; } }
+    margin-top: 0; } }
+/* NON-SQUEAKY CLEAN SPECIFIC STYLESHEETS */
+.updates a {
+  display: block;
+  margin-bottom: .25em; }
+
+.speaking-link {
+  display: block;
+  font-size: .875em;
+  margin-bottom: .375em; }

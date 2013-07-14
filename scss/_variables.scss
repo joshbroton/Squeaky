@@ -1,14 +1,14 @@
 // ---- ---- ---- ---- VARIABLES ---- ---- ---- ----
 
 // Site Colors
-$sqGrey: rgb(54,75,76); //#364B4C
+$sqGrey: rgb(64,69,70); //#364B4C
 $sqDarkGrey: darken($sqGrey, 10%); //#202e2e
 $sqMidGrey: lighten($sqGrey, 20%);
 $sqLightGrey: lighten($sqGrey, 40%);
 $sqBlueGreen: rgb(12,85,92); //#0C555C
 $sqGreen: rgb(204,223,204); //#CCDFCC
 $sqWhite: lighten($sqGreen, 20%);
-$sqRed: rgb(255,103,97); //#FF6761
+$sqRed: rgb(255,34,26); //#FF6761
 
 // Greys
 $black: rgb(0,0,0); //#000000
@@ -40,9 +40,9 @@ $logoFont: 'Architects Daughter', sans-serif;
 
 // Links
 $linkColor: $sqRed; //#8B95B3
-$linkHover: darken($linkColor,7%);
-$linkVisited: darken($linkColor,14%);
-$linkFocus: darken($linkColor,21%);
+$linkHover: darken($linkColor,5%);
+$linkVisited: darken($linkColor,10%);
+$linkFocus: darken($linkColor,15%);
 
 // Forms
 $textboxBackground: $sqGreen;

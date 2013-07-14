@@ -154,6 +154,10 @@ ol {
     padding: 0 0 0 $gutter;
 }
 
+    li {
+        margin-bottom: .375em;
+    }
+
 blockquote {
     margin: 0 $gutter $baselineHeight $gutter - .25em;
     border-left: 5px solid $sqLightGrey;
@@ -206,6 +210,7 @@ pre,
 code,
 kdb,
 samp {
+    display: block;
     margin-bottom: 1em;
     padding: $gutter / 4;
     background-color: $sqDarkGrey;

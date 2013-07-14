@@ -46,7 +46,7 @@ section.main {
     }
 
         .content {
-            @include css3-calc('width', '100% - (300px + 2em)');
+            @include css3-calc('width', '100% - (300px + 4em)');
             float: left;
         }
 
