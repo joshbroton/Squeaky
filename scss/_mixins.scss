@@ -152,3 +152,39 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+// Values for property in REM and PX with 1rem = 16px by Karl Merkli
+// @inlcude rem-fallback(STRING PROPERTY, REMVAL1, REMVAL2, REMVAL3, REMVAL4)
+// @inlcude rem-fallback(margin, 10, 20, 30, 40) outputs:
+// margin: 160px 320px 480px 640px;
+// margin: 10rem 20rem 30rem 40rem;
+@function strip-unit($num) {
+    @return $num / ($num * 0 + 1);
+}
+
+@mixin rem-px($property, $values...) {
+    $max: length($values);
+    $pxValues: '';
+    $remValues: '';
+
+    @for $i from 1 through $max {
+        $value: strip-unit(nth($values, $i));
+        $pxValues: #{$pxValues + $value*16}px;
+
+        @if $i < $max {
+            $pxValues: #{$pxValues + " "};
+        }
+    }
+
+    @for $i from 1 through $max {
+        $value: strip-unit(nth($values, $i));
+        $remValues: #{$remValues + $value}rem;
+
+        @if $i < $max {
+            $remValues: #{$remValues + " "};
+        }
+    }
+
+    #{$property}: $pxValues;
+    #{$property}: $remValues;
+}
