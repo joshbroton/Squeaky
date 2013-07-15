@@ -160,13 +160,6 @@
 // margin: 160px 320px 480px 640px;
 // margin: 10rem 20rem 30rem 40rem;
 @function strip-unit($num) {
-//CSS TRANSFORM MIXINS
-@mixin rotate($deg) {
-	-webkit-transform: rotate(#{$deg}deg);
-	-moz-transform: rotate(#{$deg}deg);
-	-ms-transform: rotate(#{$deg}deg);
-	-o-transform: rotate(#{$deg}deg);
-}
     @return $num / ($num * 0 + 1);
 }
 
@@ -248,4 +241,12 @@
 
     #{$property}: $pxValues;
     #{$property}: $remValues;
+}
+
+//CSS TRANSFORM MIXINS
+@mixin rotate($deg) {
+    -webkit-transform: rotate(#{$deg}deg);
+    -moz-transform: rotate(#{$deg}deg);
+    -ms-transform: rotate(#{$deg}deg);
+    -o-transform: rotate(#{$deg}deg);
 }
