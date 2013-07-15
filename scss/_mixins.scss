@@ -169,7 +169,12 @@
 
     @for $i from 1 through $max {
         $value: strip-unit(nth($values, $i));
-        $pxValues: #{$pxValues + $value*16}px;
+
+        @if $value != 0 {
+            $pxValues: #{$pxValues + $value*16}px;
+        } @else {
+            $pxValues: #{$pxValues + $value*16};
+        }
 
         @if $i < $max {
             $pxValues: #{$pxValues + " "};
@@ -178,7 +183,12 @@
 
     @for $i from 1 through $max {
         $value: strip-unit(nth($values, $i));
-        $remValues: #{$remValues + $value}rem;
+
+        @if $value != 0 {
+            $remValues: #{$remValues + $value}rem;
+        } @else {
+            $remValues: #{$remValues + $value};
+        }
 
         @if $i < $max {
             $remValues: #{$remValues + " "};
