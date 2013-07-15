@@ -152,3 +152,11 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+//CSS TRANSFORM MIXINS
+@mixin rotate($deg) {
+	-webkit-transform: rotate(#{$deg}deg);
+	-moz-transform: rotate(#{$deg}deg);
+	-ms-transform: rotate(#{$deg}deg);
+	-o-transform: rotate(#{$deg}deg);
+}
