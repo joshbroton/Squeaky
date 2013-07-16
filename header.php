@@ -66,17 +66,17 @@
     <!-- STYLESHEETS-->
     <link href='http://fonts.googleapis.com/css?family=Fauna+One|ABeeZee|Architects+Daughter' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-        <!-- TODO: These will be properly replaced with enqueue_script as development is completed -->
-            <!-- OTHER -->
-            <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-            <link rel="alternate" type="application/rss+xml" title="<?php bloginfo( 'name' ); ?>" href="<?php bloginfo( 'rss2_url' ); ?>" />
-            <link rel="alternate" type="application/atom+xml" title="<?php bloginfo( 'name' ); ?>" href="<?php bloginfo( 'atom_url' ); ?>" />
+    <!-- TODO: These will be properly replaced with enqueue_script as development is completed -->
+        <!-- OTHER -->
+        <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+        <link rel="alternate" type="application/rss+xml" title="<?php bloginfo( 'name' ); ?>" href="<?php bloginfo( 'rss2_url' ); ?>" />
+        <link rel="alternate" type="application/atom+xml" title="<?php bloginfo( 'name' ); ?>" href="<?php bloginfo( 'atom_url' ); ?>" />
 
-            <?php wp_head(); ?>
-        </head>
-        <body>
+        <?php wp_head(); ?>
+    </head>
+    <body>
     <div class="wrapper">
-                <header class="main">
+        <header class="main">
             <h1>
                 <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>">AR<span class="full-name">Aspects/References</span><span class="blog-description">&nbsp;=&nbsp;webNerd.thoughtsAndMusings</span></a>
             </h1>
@@ -84,16 +84,14 @@
             <nav class="social">
                 <a href="http://www.twitter.com/joshbroton" class="icon-twitter" title="Follow me on Twitter"></a><a href="http://www.joshbroton.com" class="icon-wordpress" title="My blog and personal info"></a><a href="https://www.github.com/joshbroton/Squeaky" class="icon-github" title="Fork squeakyclean on GitHub"></a>
             </nav>
-                            <a id="openMobileMenu"></a>
-                        </div><!--close navbar-contain-->
-                    <nav class="primary">
-                        <?php wp_nav_menu( array(
+            <nav class="primary">
+                <?php wp_nav_menu( array(
                     'container' => 'ul',
                     'menu_class' => 'sf-menu',
                     'menu_id' => 'main_nav',
                     'depth' => 0,
                     'theme_location' => 'header_menu'
                 ));
-                            ?>
-                        </nav>
-                    </header>
+                ?>
+            </nav>
+        </header>
