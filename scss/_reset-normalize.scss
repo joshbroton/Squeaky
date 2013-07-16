@@ -60,7 +60,7 @@ audio[controls], canvas, video {
 html {
     width: 100%;
     height: 100%;
-    background: $bodycolor;
+    background: $bodyColor;
     -webkit-overflow-scrolling: touch;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
@@ -70,10 +70,10 @@ body {
     width: 100%;
     height: 100%;
     background: transparent;
-    font-family: $basefont;
-    font-size: $basefontsize;
-    line-height: $baselineheight;
-    color: $textcolor;
+    font-family: $baseFont;
+    font-size: $baseFontSize;
+    line-height: $baselineHeight;
+    color: $textColor;
 }
 
 .clearfix {
@@ -90,46 +90,47 @@ h5,
 h6 {
     margin: 0;
     padding: 0;
-    font-family: $headingfont;
-    font-weight: $headingfontweight;
-    color: $headingcolor;
-    line-height: $headinglineheight;
+    font-family: $headingFont;
+    font-weight: $headingFontWeight;
+    color: $headingColor;
+    line-height: $headingLineHeight;
     text-rendering:  optimizeLegibility;
+    text-shadow: $headingTextShadow;
 }
 
 h1,
 .h1 {
-    margin-bottom: $baselineheight / 1.5;
-    font-size: 2em;
+    margin-bottom: $baselineHeight / 1.5;
+    font-size: 1.75em;
 }
 
 h2,
 .h2 {
-    margin-bottom: $baselineheight / 1.5;
-    font-size: 1.5em;
+    margin-bottom: $baselineHeight / 1.5;
+    font-size: 1.375em;
 }
 
 h3,
 .h3 {
-    margin-bottom: $baselineheight / 1.75;
+    margin-bottom: $baselineHeight / 1.75;
     font-size: 1.25em;
 }
 
 h4,
 .h4 {
-    margin-bottom: $baselineheight / 1.75;
-    font-size: 1.125em;
+    margin-bottom: $baselineHeight / 1.75;
+    font-size: 1em;
 }
 
 h5,
 .h5 {
-    margin-bottom: $baselineheight / 2;
+    margin-bottom: $baselineHeight / 2;
     font-size: 1em;
 }
 
 h6,
 .h6 {
-    margin-bottom: $baselineheight / 2;
+    margin-bottom: $baselineHeight / 2;
     font-size: 1em;
     font-weight: normal;
 }
@@ -139,8 +140,8 @@ ol,
 ul,
 dl,
 address {
-    margin-bottom: $baselineheight;
-    line-height: $baselineheight * 1.2;
+    margin-bottom: $baselineHeight;
+    line-height: $baselineHeight * 1.2;
 }
 
 small {
@@ -149,19 +150,24 @@ small {
 
 ul,
 ol {
+    margin-left: 1em;
     padding: 0 0 0 $gutter;
 }
 
+    li {
+        margin-bottom: .375em;
+    }
+
 blockquote {
-    margin: 0 $gutter $baselineheight $gutter - 5px;
-    border-left: 5px solid $lightgrey;
-    font-family: $headingfont;
+    margin: 0 $gutter $baselineHeight $gutter - .25em;
+    border-left: 5px solid $sqLightGrey;
+    font-family: $headingFont;
     font-style: italic;
 }
 
 dl,
 dd {
-    margin-bottom: $baselineheight
+    margin-bottom: $baselineHeight
 }
 
 dt {
@@ -177,20 +183,25 @@ strong {
     }
 }
 
+i,
 dfn,
 em {
     font-style: italic;
 }
 
+u {
+    text-decoration: underline;
+}
+
 ins {
-    background-color: $lightergrey;
-    color: $warningcolor;
+    background-color: $lighterGrey;
+    color: $warningColor;
     text-decoration: none;
 }
 
 mark {
-    background-color: $lightergrey;
-    color: $warningcolor;
+    background-color: $lighterGrey;
+    color: $warningColor;
     font-style: italic;
     font-weight: bold;
 }
@@ -199,9 +210,12 @@ pre,
 code,
 kdb,
 samp {
+    display: block;
+    margin-bottom: 1em;
     padding: $gutter / 4;
-    background-color: $lightergrey;
-    font-family: $codefont;
+    background-color: $sqDarkGrey;
+    border: 1px solid $sqMidGrey;
+    font-family: $codeFont;
     font-size: .875em;
 }
 
@@ -216,7 +230,7 @@ sup {
     position: relative;
     font-size: .75em;
     line-height: 0;
-    vertical-align: $baselineheight;
+    vertical-align: $baselineHeight;
 }
 
 sup {
@@ -229,24 +243,24 @@ sub {
 
 /* LINKS */
 a {
-    color: $linkcolor;
+    color: $linkColor;
     text-decoration: none;
     cursor:  pointer;
 
     &:hover {
-        color: $linkhover;
+        color: $linkHover;
         text-decoration: underline;
         border: 0;
         outline: 0;
     }
 
     &:visited {
-        color: $linkvisited;
+        color: $linkVisited;
     }
 
     &:focus,
     &:active {
-        color: $linkfocus;
+        color: $linkFocus;
         border: 0;
         outline: 0;
     }
@@ -263,13 +277,13 @@ strong a {
 
 /* SELECTION */
 ::-moz-selection {
-    background-color: $midgrey;
+    background-color: $midGrey;
     color: $white;
     text-shadow: none;
 }
 
 ::selection {
-    background-color: $midgrey;
+    background-color: $midGrey;
     color: $white;
     text-shadow: none;
 }
@@ -281,7 +295,7 @@ hr {
     padding: 0;
     height: 1px;
     border: 0;
-    background-color: $lightgrey;
+    background-color: $lightGrey;
 }
 
 img {
@@ -292,12 +306,12 @@ img {
 }
 
 figure {
-    margin-bottom: $baselineheight;
+    margin-bottom: $baselineHeight;
 }
 
 figcaption {
     display: block;
-    margin: 0 0 $baselineheight 0;
+    margin: 0 0 $baselineHeight 0;
     padding: 0;
     font-weight: normal;
 }
@@ -305,7 +319,7 @@ figcaption {
 /* FORMS */
 label {
     font-size: .875em;
-    color: $darkgrey;
+    color: $textColor;
 }
 
 input[type="text"],
@@ -324,16 +338,16 @@ textarea,
     display: block;
     width: 100%;
     max-width: 768px;
-    padding: $textboxpadding;
-    margin-bottom: $baselineheight;
-    background-color: $textboxbackground;
-    border: $textboxborderwidth $textboxborderstyle $textboxbordercolor;
-    color: $textboxcolor;
+    padding: $textboxPadding;
+    margin-bottom: $baselineHeight;
+    background-color: $textboxBackground;
+    border: $textboxBorderWidth $textboxBorderStyle $textboxBorderColor;
+    color: $textboxColor;
     font-size: .875em;
 
     &:active,
     &:focus {
-        border-color: $textboxbordercoloractive;
+        border-color: $textboxBorderColorActive;
     }
 }
 
@@ -353,9 +367,9 @@ input[type="reset"] {
     width: auto;
     height: auto;
     padding: .25em .5em;
-    background-color: $buttonbackground;
-    border: $buttonborderwidth $buttonborderstyle $buttonbordercolor;
-    color: $buttoncolor;
+    background-color: $buttonBackground;
+    border: $buttonBorderWidth $buttonBorderStyle $buttonBorderColor;
+    color: $buttonColor;
     font-size: .875em;
     cursor: pointer;
 }
@@ -377,7 +391,7 @@ textarea[readonly] {
 ::-webkit-input-placeholder,
 :-moz-placeholder,
 :-ms-input-placeholder {
-    color: $textboxplaceholdercolor;
+    color: $textboxPlaceholderColor;
     font-size: .875em;
 }
 
@@ -412,8 +426,8 @@ textarea[readonly] {
 table {
     height: 100%;
     width: 100%;
-    margin-bottom: $baselineheight / 2;
-    background-color: $tablebackground;
+    margin-bottom: $baselineHeight / 2;
+    background-color: $tableBackground;
     border-spacing: 0;
 }
 
@@ -421,8 +435,8 @@ th,
 td {
     padding: 0 .5em;
     vertical-align: middle;
-    border-top:  $tableborderwidth $tableborderstyle $tablebordercolor;
-    line-height: $baselineheight;
+    border-top:  $tableBorderWidth $tableBorderStyle $tableBorderColor;
+    line-height: $baselineHeight;
     text-align: left;
     font-size: .875em;
 }
@@ -447,12 +461,12 @@ tbody tr th {
 
 tbody tr:hover td,
 tbody tr:hover th {
-    background-color: $tablehover;
+    background-color: $tableHover;
 }
 
 .table-striped {
     tbody tr:nth-child(odd) td,
     tbody tr:nth-child(odd) th {
-        background-color: $tablestripe;
+        background-color: $tableStripe;
     }
 }

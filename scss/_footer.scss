@@ -1,15 +1,15 @@
 footer.main {
     width: 100;
     margin-top: 2em;
-    padding: 2em 5%;
-    background-color: $darkergrey;
+    padding: .5em;
+    background-color: $sqDarkGrey;
     color: white;
+    font-size: .75em;
 }
 
 @media only screen and (min-width: 48em) {  //approximate min-width: 768px
     footer.main {
         margin-top: 0;
-        padding: 2.5%;
     }
 }
 

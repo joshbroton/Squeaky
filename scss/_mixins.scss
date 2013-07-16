@@ -130,6 +130,8 @@
 // Image Replacement
 // @include hide-text()
 @mixin hide-text() {
+    font: 0/0 a;
+    text-shadow: none;
     text-indent: 100%;
     white-space: nowrap;
     overflow: hidden;
@@ -149,4 +151,94 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+// Values for property in REM and PX with 1rem = 16px by Karl Merkli
+// @inlcude rem-fallback(STRING PROPERTY, REMVAL1, REMVAL2, REMVAL3, REMVAL4)
+// @inlcude rem-px(margin, 1, 1, 2, 1.5) outputs or
+// @include rem-px(margin, 1rem, 1rem, 2rem, 1.5rem) outputs:
+// margin: 160px 320px 480px 640px;
+// margin: 10rem 20rem 30rem 40rem;
+@function strip-unit($num) {
+    @return $num / ($num * 0 + 1);
+}
+
+@mixin rem-px($property, $values...) {
+    $max: length($values);
+    $pxValues: '';
+    $remValues: '';
+
+    @for $i from 1 through $max {
+        $value: strip-unit(nth($values, $i));
+
+        @if $value != 0 {
+            $pxValues: #{$pxValues + $value*16}px;
+        } @else {
+            $pxValues: #{$pxValues + $value*16};
+        }
+
+        @if $i < $max {
+            $pxValues: #{$pxValues + " "};
+        }
+    }
+
+    @for $i from 1 through $max {
+        $value: strip-unit(nth($values, $i));
+
+        @if $value != 0 {
+            $remValues: #{$remValues + $value}rem;
+        } @else {
+            $remValues: #{$remValues + $value};
+        }
+
+        @if $i < $max {
+            $remValues: #{$remValues + " "};
+        }
+    }
+
+    #{$property}: $pxValues;
+    #{$property}: $remValues;
+}
+
+// Values for property in REM and PX with 16px = 1rem adapted from mixin by Karl Merkli
+// @inlcude px-rem(STRING PROPERTY, PXVAL1, PXVAL2, PXVAL3, PXVAL4)
+// @inlcude px-rem(margin, 16, 16, 32, 24) or
+// @include px-rem(margin, 16px, 16px, 32px, 24px) outputs:
+// margin: 16px 16px 32px 24px;
+// margin: 1rem 1rem 2rem 1.5rem;
+@mixin px-rem($property, $values...) {
+    $max: length($values);
+    $pxValues: '';
+    $remValues: '';
+
+    @for $i from 1 through $max {
+        $value: strip-unit(nth($values, $i));
+
+        @if $value != 0 {
+            $pxValues: #{$pxValues + $value}px;
+        } @else {
+            $pxValues: #{pxValues + $value};
+        }
+
+        @if $i < $max {
+            $pxValues: #{$pxValues + " "};
+        }
+    }
+
+    @for $i from 1 through $max {
+        $value: strip-unit(nth($values, $i));
+
+        @if $value != 0 {
+            $remValues: #{$remValues + $value/16}rem;
+        } @else {
+            $remValues: #{$remValues + $value};
+        }
+
+        @if $i < $max {
+            $pxValues: #{$pxValues + " "};
+        }
+    }
+
+    #{$property}: $pxValues;
+    #{$property}: $remValues;
 }

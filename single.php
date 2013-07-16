@@ -2,7 +2,7 @@
                 <section class="main clearfix">
                     <section class="content" role="main">
                         <?php if(have_posts()) : while(have_posts()) : the_post(); ?>
-                            <article id="post-<?php the_ID(); ?>" <?php post_class('article clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">>
+                            <article id="post-<?php the_ID(); ?>" <?php post_class('article clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
                                 <header class="article-header">
                                     <h1 title="<?php the_title_attribute(); ?>" itemprop="headline">
                                         <?php the_title(); ?>
@@ -28,7 +28,7 @@
                                     </section>
                                 </footer>
                                 <section class="comments">
-                                    <?php comments_template(); ?>
+                                    <?php comments_template( '/comments.php' ); ?>
                                 </section>
                                 <hr />
                             </article>
