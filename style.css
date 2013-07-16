@@ -34,6 +34,7 @@ audio[controls], canvas, video {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
+
 /*
   ---- ---- ---- ---- ALL VIEWPORTS AND SIZES ---- ---- ---- ----
 */
@@ -226,12 +227,12 @@ strong a {
 
 /* SELECTION */
 ::-moz-selection {
-  background-color: grey;
+  background-color: gray;
   color: white;
   text-shadow: none; }
 
 ::selection {
-  background-color: grey;
+  background-color: gray;
   color: white;
   text-shadow: none; }
 
@@ -284,7 +285,7 @@ textarea,
   margin-bottom: 1.2em;
   background-color: white;
   border: 1px solid #bfbfbf;
-  color: grey;
+  color: gray;
   font-size: .875em; }
   input[type="text"]:active, input[type="text"]:focus,
   input[type="date"]:active,
@@ -311,7 +312,7 @@ textarea,
   textarea:focus,
   .textbox:active,
   .textbox:focus {
-    border-color: grey; }
+    border-color: gray; }
 
 input[type="checkbox"],
 input[type="radio"] {
@@ -328,7 +329,7 @@ input[type="reset"] {
   width: auto;
   height: auto;
   padding: .25em .5em;
-  background-color: grey;
+  background-color: gray;
   border: 1px solid #666666;
   color: white;
   font-size: .875em;
@@ -504,7 +505,10 @@ header.main {
   border-bottom: 1px solid white; }
 
 nav.social {
-  margin: 5px 5px 5px 0; }
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 5px 5px; }
 
 nav.social a,
 #openMobileMenu {
@@ -664,17 +668,7 @@ footer.main {
   background-color: #1a1a1a;
   color: white; }
 
-/*768px*/
 @media only screen and (min-width: 48em) {
   footer.main {
     margin-top: 0;
     padding: 2.5%; } }
-@media only screen and (min-width: 62.5em) {
-  #wrapper {
-    width: 60em;
-    margin: 0 auto;
-  }
-  .navbar-contain{
-    width: 60em;
-    margin: 0 auto;
-  }
