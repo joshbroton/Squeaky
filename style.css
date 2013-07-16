@@ -898,17 +898,23 @@ footer.main {
 .portfolio-grid {
   position: relative;
   width: 100%;
-  margin: 0 auto;
+  margin: -16px auto 16px auto;
+  margin: -1rem auto 1rem auto;
   padding: 0;
   list-style: none;
-  text-align: justified; }
+  text-align: justify; }
+  .portfolio-grid:after {
+    content: '';
+    display: inline-block;
+    width: 100%; }
   .portfolio-grid li {
     display: inline-block;
-    width: -moz-calc(50% - 1em);
-    width: -webkit-calc(50% - 1em);
-    width: calc(50% - 1em);
-    vertical-align: top;
-    font-size: .1px; }
+    width: -moz-calc(50% - .5em);
+    width: -webkit-calc(50% - .5em);
+    width: calc(50% - .5em);
+    margin-top: 16px;
+    margin-top: 1rem;
+    vertical-align: top; }
     .portfolio-grid li > a, .portfolio-grid li > a img {
       position: relative;
       display: block; }

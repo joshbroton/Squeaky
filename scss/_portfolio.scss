@@ -1,16 +1,22 @@
 .portfolio-grid {
     position: relative;
     width: 100%;
-    margin: 0 auto;
+    margin: -16px auto 16px auto;
+    margin: -1rem auto 1rem auto;
     padding: 0;
     list-style: none;
-    text-align: justified;
+    text-align: justify;
+    &:after {
+        content: '';
+        display: inline-block;
+        width: 100%;
+    }
 
     li {
         display: inline-block;
-        @include css3-calc('width', '50% - 1em');
+        @include css3-calc('width', '50% - .5em');
+        @include rem-px(margin-top, 1rem);
         vertical-align: top;
-        font-size: .1px;
         
         & > a,
         & > a img {
