@@ -1,4 +1,10 @@
+    .clear {
+        clear: both;
+    }
 
+    .clearfix {
+        @include clearfix();
+    }
 
     body {
         padding-top: 50px;

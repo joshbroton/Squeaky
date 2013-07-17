@@ -239,12 +239,12 @@ strong a {
 
 /* SELECTION */
 ::-moz-selection {
-  background-color: gray;
+  background-color: grey;
   color: white;
   text-shadow: none; }
 
 ::selection {
-  background-color: gray;
+  background-color: grey;
   color: white;
   text-shadow: none; }
 
@@ -535,6 +535,17 @@ you can use the generic selector below, but it's slower:
   content: "\e004"; }
 
 /* PAGE LAYOUT */
+.clear {
+  clear: both; }
+
+.clearfix {
+  *zoom: 1; }
+  .clearfix:before, .clearfix:after {
+    display: table;
+    content: ""; }
+  .clearfix:after {
+    clear: both; }
+
 body {
   padding-top: 50px; }
 
