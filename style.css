@@ -792,6 +792,8 @@ section[role='complimentary'] {
   padding: .5em;
   background: #171e23;
   font-size: .75em; }
+  .post footer a {
+    color: #e4eaee; }
 
 .byline {
   margin: .5em 0;
