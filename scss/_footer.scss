@@ -1,9 +1,10 @@
 footer.main {
-    width: 100;
-    margin-top: 2em;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     padding: .5em;
     background-color: $sqDarkGrey;
-    color: white;
+    color: $sqWhite;
     font-size: .75em;
 }
 

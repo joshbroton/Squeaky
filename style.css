@@ -538,6 +538,11 @@ you can use the generic selector below, but it's slower:
 body {
   padding-top: 50px; }
 
+.wrapper {
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 8em; }
+
 header.main {
   position: fixed;
   left: 0;
@@ -715,6 +720,17 @@ section.main {
   float: left;
   margin: 0 .5em .5em 0; }
 
+.error-404 {
+  *zoom: 1; }
+  .error-404:before, .error-404:after {
+    display: table;
+    content: ""; }
+  .error-404:after {
+    clear: both; }
+  .error-404 img {
+    float: right;
+    margin: 0 0 1em 1em; }
+
 @media only screen and (min-width: 54em) {
   section.main {
     padding: 2em; }
@@ -877,11 +893,12 @@ section[role='complimentary'] {
   .wp-prev-next {
     margin-bottom: 0; } }
 footer.main {
-  width: 100;
-  margin-top: 2em;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   padding: .5em;
   background-color: #171e23;
-  color: white;
+  color: #e4eaee;
   font-size: .75em; }
 
 @media only screen and (min-width: 48em) {
