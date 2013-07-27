@@ -75,8 +75,7 @@
         <!-- I recommend going to modernizr.com and building a custom build. This one is huge. -->
         <script src="<?php echo get_template_directory_uri(); ?>/js/modernizr.2.6.2.js"></script>
 
-        <!-- I also recommend requesting jquery from Google's Ajax servers -->
-        <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.1.8.3.min.js"></script>
+        <?php wp_head(); ?>
 
         <script src="<?php echo get_template_directory_uri(); ?>/js/hoverIntent.js"></script>
         <script src="<?php echo get_template_directory_uri(); ?>/js/superfish.js"></script>
@@ -113,7 +112,7 @@
     <!-- OTHER -->
         <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
-        <?php wp_head(); ?>
+
 </head>
 <body <?php body_class($class); ?>>
     <div class="wrapper">

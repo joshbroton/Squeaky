@@ -62,7 +62,7 @@
 // blank image data-uri bypasses webkit log warning (thx doug jones)
 var BLANK = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';
 
-$.fn.imagesLoaded = function( callback ) {
+jQuery.fn.imagesLoaded = function( callback ) {
     var $this = this,
         deferred = $.isFunction($.Deferred) ? $.Deferred() : 0,
         hasNotify = $.isFunction(deferred.notify),
@@ -421,7 +421,7 @@ var Grid = (function() {
                     description : $itemEl.data( 'description' )
                 };
 
-            this.$title.html( eldata.title );
+            this.$title.html('<a href="' + eldata.href + '" target="_blank" title="' + eldata.title + '">' +  eldata.title + "</a>" );
             this.$description.html( eldata.description );
             this.$href.attr( 'href', eldata.href );
 

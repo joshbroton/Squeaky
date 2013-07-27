@@ -213,8 +213,8 @@ samp {
     display: block;
     margin-bottom: 1em;
     padding: $gutter / 4;
-    background-color: $sqDarkGrey;
-    border: 1px solid $sqMidGrey;
+    background-color: $sqMidGrey;
+    border: 1px solid $sqLightGrey;
     font-family: $codeFont;
     font-size: .875em;
 }

@@ -24,22 +24,10 @@ get_header(); ?>
                     <a href="<?php echo $post_meta["portfolio_external_link"][0]; ?>" data-largesrc="<?php bloginfo('url'); ?>/wp-content/uploads/<?php echo $post_meta["portfolio_image_large"][0]; ?>" data-title="<?php echo $post_meta["portfolio_external_link_text"][0]; ?>" data-description="<?php the_content(); ?>">
                         <img src="<?php bloginfo('url'); ?>/wp-content/uploads/<?php echo $post_meta["portfolio_image_thumbnail"][0]; ?>" alt="<?php echo $post_meta["portfolio_external_link_text"][0] ?>" />
                     </a>
-                    <!--<section class="portfolio-expander">
-                        <div class="portfolio-expander-inner">
-                            <span class="portfolio-close"></span>
-                            <figure class="portfolio-image-large">
-                                <div class="portfolio-loading"></div>
-                                <img src="<?php /*bloginfo('url'); */?>/wp-content/uploads/<?php /*echo $post_meta["portfolio_image_large"][0]; */?>" alt="<?php /*echo $post_meta["portfolio_external_link_text"][0] */?>" />
-                            </figure>
-                            <div class="portfolio-details">
-                                <h3><?php /*echo $post_meta["portfolio_external_link_text"][0]; */?></h3>
-                                <?php /*the_content(); */?>
-                                <a href="<?php /*echo $post_meta["portfolio_external_link"][0]; */?>" target="_blank" title="<?php /*echo $post_meta["portfolio_external_link_text"][0]; */?>">Visit Website</a>
-                            </div>
-                        </div>
-                    </section>-->
                 </li>
             <?php endwhile; ?>
+                <li class="extra"></li>
+                <li class="extra"></li>
             </ul>
             <?php else: ?>
 

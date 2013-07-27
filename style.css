@@ -191,8 +191,8 @@ samp {
   display: block;
   margin-bottom: 1em;
   padding: 0.25em;
-  background-color: #171e23;
-  border: 1px solid #536e80;
+  background-color: #536e80;
+  border: 1px solid #a7b9c5;
   font-family: Monaco, Courier New, monospace;
   font-size: .875em; }
 
@@ -937,10 +937,15 @@ footer.main {
     .portfolio-grid li > a, .portfolio-grid li > a img {
       position: relative;
       display: block; }
+    .portfolio-grid li > a img {
+      width: 100%; }
     .portfolio-grid li.portfolio-expanded > a:after {
       position: absolute;
       content: " ";
       left: 50%;
+      left: -moz-calc(50% - 1.95em);
+      left: -webkit-calc(50% - 1.95em);
+      left: calc(50% - 1.95em);
       top: auto;
       width: 0;
       height: 0;
@@ -949,6 +954,9 @@ footer.main {
       border: solid transparent;
       border-bottom-color: #536e80;
       border-width: 1em; }
+  .portfolio-grid .extra {
+    display: inline-block;
+    height: 0; }
 
 .portfolio-expander {
   position: absolute;
@@ -962,7 +970,7 @@ footer.main {
   overflow: hidden; }
 
 .portfolio-expander-inner {
-  padding: 4em 2em; }
+  padding: 2em 1em; }
 
 .portfolio-close {
   position: absolute;
@@ -970,7 +978,8 @@ footer.main {
   top: 1em;
   width: 2em;
   height: 2em;
-  cursor: pointer; }
+  cursor: pointer;
+  z-index: 2; }
   .portfolio-close:before, .portfolio-close:after {
     content: '';
     position: absolute;
@@ -990,10 +999,31 @@ footer.main {
   .portfolio-close:hover:before, .portfolio-close:hover:after {
     background: #a7b9c5; }
 
-.portfolio-image-large,
-.portfolio-details {
-  position: relative;
-  float: left;
+.portfolio-fullimg {
   width: 50%;
-  height: 100%;
-  overflow: hidden; }
+  margin: 0 auto 1em auto; }
+
+@media only screen and (min-width: 32em) {
+  .portfolio-grid li {
+    width: -moz-calc(33.3333333333% - .6666666666667em);
+    width: -webkit-calc(33.3333333333% - .6666666666667em);
+    width: calc(33.3333333333% - .6666666666667em);
+    margin-bottom: 5%; }
+
+  .portfolio-fullimg,
+  .portfolio-details {
+    position: relative;
+    float: left;
+    width: 47.5%;
+    width: -moz-calc(33.33333333333% - .5em);
+    width: -webkit-calc(33.33333333333% - .5em);
+    width: calc(33.33333333333% - .5em);
+    height: 100%;
+    overflow: hidden; }
+
+  .portfolio-details {
+    float: right;
+    width: 47.5%;
+    width: -moz-calc(66.6666666667% - .5em);
+    width: -webkit-calc(66.6666666667% - .5em);
+    width: calc(66.6666666667% - .5em); } }
