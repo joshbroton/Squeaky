@@ -10,7 +10,7 @@ nav.social {
     a {
         display: inline-block;
         padding: 0 .25em;
-        color: $sqGreen;
+        color: $sqLightGrey;
         line-height: 50px;
         background-position: 50% 50%;
         @include transition(color .2s);
@@ -30,7 +30,7 @@ nav.social {
     width: 40px;
     line-height: 50px;
     font-size: 1.5em;
-    color: $sqGreen;
+    color: $sqLightGrey;
     @include transition(color .2s);
 
     &:hover {
@@ -54,7 +54,7 @@ nav.primary {
     li {
         width: 100%;
         list-style: none;
-        border-bottom: 1px solid $sqGreen;
+        border-bottom: 1px solid $sqLightGrey;
 
         &:last-child {
             border-bottom: 0;
@@ -64,7 +64,7 @@ nav.primary {
     a {
         display: block;
         padding: 20px;
-        color: $sqGreen;
+        color: $sqLightGrey;
         font-weight: bold;
         @include transition(color .2s);
 

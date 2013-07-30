@@ -2,9 +2,10 @@
 //enqueue jQuery
 function squeaky_scripts_method() {
     wp_enqueue_script('jquery');
-    wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/modernizr.2.6.2.min.js', array('jquery'));
+    wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/modernizr.2.6.2.js', array('jquery'));
     wp_enqueue_script('hoverintent', get_template_directory_uri() . '/js/hoverIntent.js', array('jquery'));
-    wp_enqueue_script('superfish', get_template_directory_uri() . '/js/superfish.js', array('jquery'));           
+    wp_enqueue_script('superfish', get_template_directory_uri() . '/js/superfish.js', array('jquery'));
+    wp_enqueue_script('portfolio', get_template_directory_uri() . '/js/portfolio.js', array('jquery'));
 }
 add_action('wp_enqueue_scripts', 'squeaky_scripts_method'); // For use on the Front end (ie. Theme)
 //add IE stuff after jquery loads

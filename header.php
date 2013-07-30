@@ -64,17 +64,18 @@
 
 
     <!-- STYLESHEETS-->
-    <link href='http://fonts.googleapis.com/css?family=Fauna+One|ABeeZee|Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-    <!-- TODO: These will be properly replaced with enqueue_script as development is completed -->
-        <!-- OTHER -->
+        <link href='http://fonts.googleapis.com/css?family=Fauna+One|ABeeZee|Architects+Daughter' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+
+
+    <!-- OTHER -->
         <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
         <link rel="alternate" type="application/rss+xml" title="<?php bloginfo( 'name' ); ?>" href="<?php bloginfo( 'rss2_url' ); ?>" />
         <link rel="alternate" type="application/atom+xml" title="<?php bloginfo( 'name' ); ?>" href="<?php bloginfo( 'atom_url' ); ?>" />
 
-        <?php wp_head(); ?>
-    </head>
-    <body>
+    <?php wp_head(); ?>
+</head>
+<body>
     <div class="wrapper">
         <header class="main">
             <h1>

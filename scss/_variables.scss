@@ -1,13 +1,12 @@
 // ---- ---- ---- ---- VARIABLES ---- ---- ---- ----
 
 // Site Colors
-$sqGrey: rgb(64,69,70); //#364B4C
+$sqGrey: rgb(43, 57, 66);; //
 $sqDarkGrey: darken($sqGrey, 10%); //#202e2e
 $sqMidGrey: lighten($sqGrey, 20%);
-$sqLightGrey: lighten($sqGrey, 40%);
+$sqLightGrey: lighten($sqGrey, 50%);
 $sqBlueGreen: rgb(12,85,92); //#0C555C
-$sqGreen: rgb(204,223,204); //#CCDFCC
-$sqWhite: lighten($sqGreen, 20%);
+$sqWhite: lighten($sqLightGrey, 20%);
 $sqRed: rgb(255,34,26); //#FF6761
 
 // Greys
@@ -21,7 +20,7 @@ $white: rgb(255,255,255); //#ffffff
 
 // Root
 $bodyColor: $sqGrey;
-$textColor: $sqWhite;
+$textColor: $sqLightGrey;
 $columnMargin: .5em;
 $gutter: 1em;
 $warningColor: red;
@@ -33,7 +32,7 @@ $baselineHeight: 1.2em;
 $headingFont: 'Fauna One', serif;
 $headingLineHeight: 1.35em;
 $headingFontWeight: bold;
-$headingColor: $sqGreen;
+$headingColor: $sqLightGrey;
 $headingTextShadow: $sqMidGrey 1px 1px;
 $codeFont: Monaco, Courier New, monospace;
 $logoFont: 'Architects Daughter', sans-serif;
@@ -45,7 +44,7 @@ $linkVisited: darken($linkColor,10%);
 $linkFocus: darken($linkColor,15%);
 
 // Forms
-$textboxBackground: $sqGreen;
+$textboxBackground: $sqWhite;
 $textboxBorderColor: $sqBlueGreen;
 $textboxBorderColorActive: $sqRed;
 $textboxBorderWidth: 1px;
@@ -58,7 +57,7 @@ $buttonBackground: $sqDarkGrey;
 $buttonBorderColor: darken($buttonBackground,10%);
 $buttonBorderWidth: 1px;
 $buttonBorderStyle: solid;
-$buttonColor: $sqGreen;
+$buttonColor: $sqWhite;
 $buttonPadding: .25em .75em;
 
 // Tables

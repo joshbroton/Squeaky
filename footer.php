@@ -1,6 +1,6 @@
             <footer class="main" role="contentinfo">
                 <article class="copyright">
-                    This is the <a href="http://www.squeakycleantheme.com">squeakyclean WordPress Boilerplate</a>, and it's &copy;<?php echo date("Y"); ?> <a href="http://www.twitter.com/joshbroton">Josh Broton</a> and <a href="http://joshbroton.com">Aspects &amp; Reference</a>.<br />
+                    This is the <a href="http://github.com/joshbroton/Squeaky">squeakyclean WordPress Boilerplate</a>, and it's &copy;<?php echo date("Y"); ?> <a href="http://www.twitter.com/joshbroton">Josh Broton</a> and <a href="http://joshbroton.com">Aspects/Reference</a>.<br />
                     Don't let that worry you. It's still 100% free to use and licensed under GPLv2 or later. <br />
                     Use this. Please. Seriously. And help me by <a href="https://github.com/joshbroton/Squeaky">forking it on GitHub</a> and cleaning up my code.
                 </article>
@@ -15,16 +15,15 @@
                 </nav>
                 <script>
                     (function(){
-                        var $ = jQuery;
-                            $('.sf-menu ul').superfish({
+                            jQuery('.sf-menu ul').superfish({
                                 delay: 1000,
                                 animation: {opacity:'show',height:'show'},
                                 speed: 'fast',
                                 dropShadows: false
                             });
 
-                            $('#openMobileMenu').on('click', (function () {
-                                var menuid = $('nav.primary');
+                        jQuery('#openMobileMenu').on('click', (function () {
+                                var menuid = jQuery('nav.primary');
                                 if (!menuid.is(':visible')) {
                                     menuid.slideDown(300);
                                 } else {

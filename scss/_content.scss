@@ -35,6 +35,15 @@ section.main {
     margin: 0 .5em .5em 0;
 }
 
+.error-404 {
+    @include clearfix();
+
+    img {
+        float: right;
+        margin: 0 0 1em 1em;
+    }
+}
+
 @media only screen and (min-width: 48em) {  //approximate min-width: 768px
     section.main {
     }
