@@ -1,0 +1,35 @@
+<<<<<<< HEAD
+    .clear {
+        clear: both;
+    }
+
+    .clearfix {
+        @include clearfix();
+    }
+
+    body {
+        padding-top: 50px;
+    }
+=======
+body {
+    padding-top: 50px;
+}
+
+.wrapper {
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 8em;
+}
+>>>>>>> aspects-and-references
+
+@media only screen and (min-width: 48em) {  //approximate min-width: 768px
+
+}
+
+@media only screen and (min-width: 54em) {  //approximate min-width: 992px
+
+}
+
+@media only screen and (min-width: 84em) { //approximate min-width: 1340px
+
+}

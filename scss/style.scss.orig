@@ -1,0 +1,30 @@
+/*--
+    Theme Name:  squeakyclean
+    Theme URI:  http: //www.joshbroton.com/squeakyclean
+    Description:  A fast and clean responsive WordPress boilerplate
+    Author:  Josh Broton
+    Author URL:  http: //www.joshbroton.com
+--*/
+
+@import "variables";
+@import "mixins";
+@import "reset-normalize";
+@import "icon-font";
+
+/* PAGE LAYOUT */
+@import "structure";
+@import "header";
+@import "navigation";
+@import "content";
+@import "complimentary";
+@import "posts-comments";
+@import "footer";
+
+/* NON-SQUEAKY CLEAN SPECIFIC STYLESHEETS */
+<<<<<<< HEAD
+@import "non-squeaky-specific";
+
+=======
+@import "sidebar-text-widgets";
+@import "portfolio";
+>>>>>>> aspects-and-references
