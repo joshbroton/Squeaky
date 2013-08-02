@@ -13,28 +13,28 @@
                     ));
                     ?>
                 </nav>
-                <script>
-                    (function(){
-                            jQuery('.sf-menu ul').superfish({
-                                delay: 1000,
-                                animation: {opacity:'show',height:'show'},
-                                speed: 'fast',
-                                dropShadows: false
-                            });
-
-                        jQuery('#openMobileMenu').on('click', (function () {
-                                var menuid = jQuery('nav.primary');
-                                if (!menuid.is(':visible')) {
-                                    menuid.slideDown(300);
-                                } else {
-                                    menuid.slideUp(300);
-                                };
-                            })
-                            );
-                        })();
-                    </script>
-                <?php wp_footer(); ?>
             </footer>
         </div>
+        <?php wp_footer(); ?>
+        <script>
+            (function(){
+                jQuery('.sf-menu ul').superfish({
+                    delay: 1000,
+                    animation: {opacity:'show',height:'show'},
+                    speed: 'fast',
+                    dropShadows: false
+                });
+
+                jQuery('#openMobileMenu').on('click', (function () {
+                    var menuid = jQuery('nav.primary');
+                    if (!menuid.is(':visible')) {
+                        menuid.slideDown(300);
+                    } else {
+                        menuid.slideUp(300);
+                    };
+                })
+                );
+            })();
+        </script>
     </body>
 </html>

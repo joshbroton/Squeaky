@@ -2,9 +2,9 @@
 //enqueue jQuery
 function squeaky_scripts_method() {
     wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/modernizr.2.6.2.js');
-    wp_enqueue_script('jquery');
-    wp_enqueue_script('hoverintent', get_template_directory_uri() . '/js/hoverIntent.js', array('jquery'));
-    wp_enqueue_script('superfish', get_template_directory_uri() . '/js/superfish.js', array('jquery'));
+    wp_enqueue_script('jquery', get_site_url() . '/wp-includes/js/jquery/jquery.js24', '', '', true);
+    wp_enqueue_script('hoverintent', get_template_directory_uri() . '/js/hoverIntent.js', array('jquery'), '', true);
+    wp_enqueue_script('superfish', get_template_directory_uri() . '/js/superfish.js', array('jquery'), null, true);
 
     //enqueue portfolio script if portfolio page
     if ( is_page_template('page-portfoliolist.php') ) {
