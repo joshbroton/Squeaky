@@ -75,7 +75,7 @@
 
     <?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class('squeaky'); ?>>
     <div class="wrapper">
         <header class="main">
             <h1>
