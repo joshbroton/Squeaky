@@ -49,6 +49,11 @@ add_action('wp_head', 'ie_stuff');
     set_post_thumbnail_size( 1200, 600 );
 
 
+    // Post Format Support
+    add_theme_support( 'post-formats', array( 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio' ) );
+    add_post_type_support( 'sq_post_type_socialpost', 'post-formats' );
+
+
     // Link post thumbnail to post permalink
     // Comment out to disable.
     add_filter( 'post_thumbnail_html', 'sq_post_image_html', 10, 3 );
@@ -82,6 +87,7 @@ add_action('wp_head', 'ie_stuff');
 
     // Add custom post types
     add_action( 'init', 'sq_post_type_portfolio' );
+    add_action( 'init', 'sq_post_type_socialpost');
     function sq_post_type_portfolio() {
         register_post_type( 'sq_portfolio',
             array(
@@ -105,3 +111,50 @@ add_action('wp_head', 'ie_stuff');
             )
         );
     }
+    function sq_post_type_socialpost() {
+        register_post_type( 'sq_socialpost',
+            array(
+                'labels' => array(
+                    'name' => 'Social Posts',
+                    'singular_name' =>  'Social Post' ,
+                    'add_new_item' => 'Add New Social Post',
+                    'edit_item' => 'Edit a Social Post',
+                    'new_item' => 'New Social Post',
+                    'view_item' => 'View Social Post',
+                    'not_found' => 'No Social Posts found'
+                ),
+                'public' => true,
+                'has_archive' => true,
+                'rewrite' => array('slug' => 'socialposts'),
+                'supports' => array(
+                    'title',
+                    'custom-fields',
+                    'thumbnail',
+                    'editor',
+                    'comments',
+                    'post-formats'),
+                'taxonomies' => array(
+
+                )
+            )
+        );
+        register_taxonomy(
+            'sq_socialpost_categories',
+            'sq_socialpost',
+            array(
+                'labels' => array(
+                    'name' => 'Social Post Categories',
+                    'singular_name' =>  'Social Post Category' ,
+                    'add_new_item' => 'Add New Social Post Category',
+                    'edit_item' => 'Edit a Social Post Category',
+                    'new_item' => 'New Social Post Category',
+                    'view_item' => 'View Social Post Category',
+                    'not_found' => 'No Social Post Categories found'
+                ),
+                'hierarchical' => true,
+                'show_tagcloud' => false,
+                'rewrite' => array( 'slug' => 'socialpost-category' )
+            )
+        );
+    }
+
