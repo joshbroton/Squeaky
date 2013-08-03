@@ -1,13 +1,13 @@
 // ---- ---- ---- ---- VARIABLES ---- ---- ---- ----
 
 // Site Colors
-$sqGrey: rgb(43, 57, 66);; //
+$sqGrey: rgb(43, 57, 66);; //#2b3942
 $sqDarkGrey: darken($sqGrey, 10%); //#202e2e
 $sqMidGrey: lighten($sqGrey, 20%);
-$sqLightGrey: lighten($sqGrey, 50%);
-$sqBlueGreen: rgb(12,85,92); //#0C555C
+$sqLightGrey: lighten($sqGrey, 60%);
+$sqBlueGreen: rgb(12,85,92); //#0c555c
 $sqWhite: lighten($sqLightGrey, 20%);
-$sqRed: rgb(255,34,26); //#FF6761
+$sqRed: rgb(255,34,26); //#ff6761
 
 // Greys
 $black: rgb(0,0,0); //#000000
@@ -26,10 +26,10 @@ $gutter: 1em;
 $warningColor: red;
 
 // Typography
-$baseFont: 'ABeeZee', sans-serif;
+$baseFont: 'PT Sans', sans-serif;
 $baseFontSize: 125%;
 $baselineHeight: 1.2em;
-$headingFont: 'Fauna One', serif;
+$headingFont: $baseFont;
 $headingLineHeight: 1.35em;
 $headingFontWeight: bold;
 $headingColor: $sqLightGrey;

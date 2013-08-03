@@ -64,7 +64,7 @@
 
 
     <!-- STYLESHEETS-->
-        <link href='http://fonts.googleapis.com/css?family=Fauna+One|ABeeZee|Architects+Daughter' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700|Vollkorn' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 
 
@@ -79,7 +79,7 @@
     <div class="wrapper">
         <header class="main">
             <h1>
-                <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>">AR<span class="full-name">Aspects/References</span><span class="blog-description">&nbsp;=&nbsp;webNerd.thoughtsAndMusings</span></a>
+                <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/ar-logo.png" alt="aspects/reference" /><span class="full-name">aspects/reference</span><span class="blog-description">&nbsp;=&nbsp;webNerd.thoughtsAndMusings</span></a>
             </h1>
             <a id="openMobileMenu" class="icon-menu"></a>
             <nav class="social">

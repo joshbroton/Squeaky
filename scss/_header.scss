@@ -17,15 +17,10 @@ header.main {
         a {
             display: block;
             height: 50px;
-            background: url(images/slash-logo.png) no-repeat 15px 50%;
             color: $sqLightGrey;
-            font-family: $logoFont;
+            font-family: $baseFont;
             line-height: 50px;
             overflow: hidden;
-
-            &:first-letter {
-                letter-spacing: .4em;
-            }
 
             &:hover {
                 text-decoration: none;
@@ -35,6 +30,11 @@ header.main {
                 vertical-align: top;
                 line-height: 50px;
             }
+        }
+
+        img {
+            height: 100%;
+            vertical-align: top;
         }
     }
 }
