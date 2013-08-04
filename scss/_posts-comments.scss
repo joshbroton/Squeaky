@@ -1,4 +1,4 @@
-.post {
+.article {
     header {
         h1 {
             margin-bottom: 0;
@@ -14,19 +14,14 @@
         width: 60%;
     }
 
-    footer {
-        padding: .5em;
-        background: $sqDarkGrey;
-        font-size: .75em;
-
-        a {
-            color: $sqWhite;
-        }
+    img {
+        max-width: 100%;
+        height: auto;
     }
 }
 
     .byline {
-        margin: .5em 0;
+        margin: .5em 0 0 0;
         font-size: .75em;
         font-style: italic;
 
@@ -42,6 +37,20 @@
         margin-bottom: .5em;
         padding: 5px;
         border: 1px solid $lightGrey;
+    }
+
+    .article-content {
+        padding-top: .5em;
+    }
+
+    .article-footer {
+        padding: .5em;
+        background: $sqDarkGrey;
+        font-size: .75em;
+
+        a {
+            color: $sqWhite;
+        }
     }
 
 .comments {
@@ -86,7 +95,8 @@
                 border-top: 2px solid $sqDarkGrey;
             }
 
-            .comment-author-admin {
+            .comment-author-admin,
+            .bypostauthor {
                 .comment-body {
                     border-color: darken($sqRed, 14%);
                 }

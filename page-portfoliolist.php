@@ -21,8 +21,8 @@ get_header(); ?>
             ?>
 
                 <li>
-                    <a href="<?php echo $post_meta["portfolio_external_link"][0]; ?>" data-largesrc="<?php bloginfo('url'); ?>/wp-content/uploads/<?php echo $post_meta["portfolio_image_large"][0]; ?>" data-title="<?php echo $post_meta["portfolio_external_link_text"][0]; ?>" data-description="<?php the_content(); ?>">
-                        <img src="<?php bloginfo('url'); ?>/wp-content/uploads/<?php echo $post_meta["portfolio_image_thumbnail"][0]; ?>" alt="<?php echo $post_meta["portfolio_external_link_text"][0] ?>" />
+                    <a href="<?php echo $post_meta["portfolio_external_link"][0]; ?>" data-largesrc="<?php echo home_url(); ?>/wp-content/uploads/<?php echo $post_meta["portfolio_image_large"][0]; ?>" data-title="<?php echo $post_meta["portfolio_external_link_text"][0]; ?>" data-description="<?php the_content(); ?>">
+                        <img src="<?php echo home_url(); ?>/wp-content/uploads/<?php echo $post_meta["portfolio_image_thumbnail"][0]; ?>" alt="<?php echo $post_meta["portfolio_external_link_text"][0] ?>" />
                     </a>
                 </li>
             <?php endwhile; ?>

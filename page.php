@@ -28,6 +28,9 @@
                         </section>
                         <?php endif; ?>
                     </article>
+                    <nav class="paginated-posts">
+                        <?php wp_link_pages(); ?>
+                    </nav>
                     <?php endwhile; ?>
                     <nav class="wp-prev-next">
                         <div class="prev-link">

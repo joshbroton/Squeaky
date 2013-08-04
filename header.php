@@ -79,7 +79,7 @@
     <div class="wrapper">
         <header class="main">
             <h1>
-                <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/ar-logo.png" alt="aspects/reference" /><span class="full-name">aspects/reference</span><span class="blog-description">&nbsp;=&nbsp;webNerd.thoughtsAndMusings</span></a>
+                <a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/ar-logo.png" alt="aspects/reference" /><span class="full-name">aspects/reference</span><span class="blog-description">&nbsp;=&nbsp;webNerd.thoughtsAndMusings</span></a>
             </h1>
             <a id="openMobileMenu" class="icon-menu"></a>
             <nav class="social">

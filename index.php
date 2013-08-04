@@ -12,14 +12,14 @@
                                     <time class="updated" datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time(get_option('date_format')); ?></time> by <span class="author"><?php the_author_posts_link(); ?></span>
                                 </aside>
                             </header>
-                            <section class="article-content clearfix">
+                            <main class="article-content clearfix">
                                 <?php
                                     if ( has_post_thumbnail() ) {
                                         the_post_thumbnail();
                                     }
                                     the_content();
                                 ?>
-                            </section>
+                            </main>
                             <footer class="article-footer">
                                 <section class="categories">
                                     Categories: <?php the_category(', '); ?>
@@ -39,6 +39,7 @@
                             <?php echo previous_posts_link('Newer Entries &raquo;') ?>
                         </div>
                     </nav>
+                    <?php wp_link_pages(); ?>
                     <?php else : ?>
                         <article class="post-404">
                             <header class="article-header">

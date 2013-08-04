@@ -32,6 +32,9 @@
                                 </section>
                                 <hr />
                             </article>
+                            <nav class="paginated-posts">
+                                <?php wp_link_pages(); ?>
+                            </nav>
                         <?php endwhile; ?>
                         <?php else : ?>
                             <article class="post-404">

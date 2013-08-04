@@ -25,14 +25,45 @@ section.main {
     }
 }
 
-.alignright {
-    float: right;
-    margin: 0 0 .5em .5em;
+.alignright,
+.alignleft,
+.aligncenter,
+.alignnone {
+    display: block;
+    width: 100%;
+    margin: 0 0 .5em 0;
 }
 
-.alignleft {
-    float: left;
-    margin: 0 .5em .5em 0;
+.wp-caption {
+    border: 1px solid $sqLightGrey;
+    padding: .25em;
+    text-align: center;
+}
+
+.wp-caption-text,
+.gallery-caption {
+    font-size: .75em;
+    font-style: italic;
+}
+
+.sticky {
+    header,
+    main {
+        background: lighten($bodyColor, 5%);
+    }
+
+    header {
+        padding: 1em;
+    }
+
+    main {
+        padding: 0 1em;
+    }
+
+    footer {
+        border: 1em solid lighten($bodyColor, 5%);
+        border-top: 0;
+    }
 }
 
 .error-404 {
@@ -41,6 +72,31 @@ section.main {
     img {
         float: right;
         margin: 0 0 1em 1em;
+    }
+}
+
+@media only screen and (min-width: 40em) {
+    .alignright {
+        float: right;
+        width: 50%;
+        margin: 0 0 .5em .5em;
+    }
+
+    .alignleft {
+        float: left;
+        width: 50%;
+        margin: 0 .5em .5em 0;
+    }
+
+    .aligncenter {
+        width: auto;
+        margin: .5em auto;
+    }
+
+    .alignnone {
+        float: none;
+        width: auto;
+        margin: 0 .5em .5em 0;
     }
 }
 

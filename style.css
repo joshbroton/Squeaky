@@ -4,7 +4,7 @@
     Description:  A fast and clean responsive WordPress boilerplate
     Author:  Josh Broton
     Author URI:  http: //www.joshbroton.com
-    Version: 0.1a
+    Version: 0.1.1a
     License: GPLv2
     License URI: http://www.gnu.org/licenses/gpl-2.0.html
     Tags: blue, red, dark, two-column, flexible-width, right-sidebar, featured-images
@@ -727,13 +727,34 @@ section.main {
     width: 100% !important;
     height: 100% !important; }
 
-.alignright {
-  float: right;
-  margin: 0 0 .5em .5em; }
+.alignright,
+.alignleft,
+.aligncenter,
+.alignnone {
+  display: block;
+  width: 100%;
+  margin: 0 0 .5em 0; }
 
-.alignleft {
-  float: left;
-  margin: 0 .5em .5em 0; }
+.wp-caption {
+  border: 1px solid #c5d2da;
+  padding: .25em;
+  text-align: center; }
+
+.wp-caption-text,
+.gallery-caption {
+  font-size: .75em;
+  font-style: italic; }
+
+.sticky header,
+.sticky main {
+  background: #354651; }
+.sticky header {
+  padding: 1em; }
+.sticky main {
+  padding: 0 1em; }
+.sticky footer {
+  border: 1em solid #354651;
+  border-top: 0; }
 
 .error-404 {
   *zoom: 1; }
@@ -746,6 +767,25 @@ section.main {
     float: right;
     margin: 0 0 1em 1em; }
 
+@media only screen and (min-width: 40em) {
+  .alignright {
+    float: right;
+    width: 50%;
+    margin: 0 0 .5em .5em; }
+
+  .alignleft {
+    float: left;
+    width: 50%;
+    margin: 0 .5em .5em 0; }
+
+  .aligncenter {
+    width: auto;
+    margin: .5em auto; }
+
+  .alignnone {
+    float: none;
+    width: auto;
+    margin: 0 .5em .5em 0; } }
 @media only screen and (min-width: 54em) {
   section.main {
     padding: 2em; }
@@ -812,22 +852,19 @@ section[role='complimentary'] {
     section[role='complimentary'] hr {
       display: block;
       margin: 1em auto; } }
-.post header h1 {
+.article header h1 {
   margin-bottom: 0; }
-  .post header h1 a {
+  .article header h1 a {
     font-weight: bold; }
-.post hr {
+.article hr {
   margin: 2em 20%;
   width: 60%; }
-.post footer {
-  padding: .5em;
-  background: #171e23;
-  font-size: .75em; }
-  .post footer a {
-    color: white; }
+.article img {
+  max-width: 100%;
+  height: auto; }
 
 .byline {
-  margin: .5em 0;
+  margin: .5em 0 0 0;
   font-size: .75em;
   font-style: italic; }
   .byline a {
@@ -840,6 +877,16 @@ section[role='complimentary'] {
   margin-bottom: .5em;
   padding: 5px;
   border: 1px solid #bfbfbf; }
+
+.article-content {
+  padding-top: .5em; }
+
+.article-footer {
+  padding: .5em;
+  background: #171e23;
+  font-size: .75em; }
+  .article-footer a {
+    color: white; }
 
 .comments {
   margin-top: 2em; }
@@ -867,7 +914,8 @@ section[role='complimentary'] {
   padding: .25em 0 1.5em 0;
   border-top: 2px solid #171e23; }
 
-.comment-author-admin .comment-body {
+.comment-author-admin .comment-body,
+.bypostauthor .comment-body {
   border-color: #d20700; }
 
 .comment-author,
