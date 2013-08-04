@@ -32,7 +32,7 @@ get_header(); ?>
             <?php else: ?>
 
                 <section class="warning">
-                    I am sorry, but it appears as though I haven't done anything portfolio worth! (I have, so if you're getting this message, there was an error) Go <a href="<?php bloginfo('url'); ?>">home</a> and let me know what error you got. Thanks!
+                    I am sorry, but it appears as though I haven't done anything portfolio worth! (I have, so if you're getting this message, there was an error) Go <a href="<?php echo home_url(); ?>">home</a> and let me know what error you got. Thanks!
                 </section>
             <?php endif; ?>
         </section>
