@@ -198,7 +198,8 @@ samp {
   background-color: #c5d2da;
   border: 1px solid white;
   font-family: Monaco, Courier New, monospace;
-  font-size: .875em; }
+  font-size: .875em;
+  color: #171e23; }
 
 pre {
   white-space: pre;
