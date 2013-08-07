@@ -1,8 +1,6 @@
 Squeaky Clean
 =============
-A new fast and clean WordPress boilerplate.
-
-Version 0.2
+Version 0.2 of a fast and clean WordPress theme boilerplate. Total download without images is <400k. 
 
 
 Changelog
@@ -15,9 +13,10 @@ Changelog
 * Split style.scss into multiple files.
 
 
-Future
-------
+Future Improvements
+-------------------
 * Add other page templates
 * Theme options
 * Minify/concatenate scripts and styles before publishing
+* Create custom jQuery version containing only necessary functions (Give users the option to use full jQuery if using plugins)
 * Submit to repository
