@@ -2,6 +2,8 @@ Squeaky Clean
 =============
 Version 0.2 of a fast and clean WordPress theme boilerplate. Total download without images is <400k. 
 
+You can see the theme in action at [joshbroton.com](http://joshbroton.com).
+
 
 Changelog
 ---------
