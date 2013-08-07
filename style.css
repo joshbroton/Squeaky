@@ -4,7 +4,7 @@
     Description:  A fast and clean responsive WordPress boilerplate
     Author:  Josh Broton
     Author URI:  http: //www.joshbroton.com
-    Version: 0.1.1a
+    Version: 0.1.2
     License: GPLv2
     License URI: http://www.gnu.org/licenses/gpl-2.0.html
     Tags: blue, red, dark, two-column, flexible-width, right-sidebar, featured-images
@@ -195,8 +195,8 @@ samp {
   display: block;
   margin-bottom: 1em;
   padding: 0.25em;
-  background-color: #536e80;
-  border: 1px solid #c5d2da;
+  background-color: #c5d2da;
+  border: 1px solid white;
   font-family: Monaco, Courier New, monospace;
   font-size: .875em; }
 
@@ -881,6 +881,10 @@ section[role='complimentary'] {
 .article-content {
   padding-top: .5em; }
 
+.bottom-date {
+  margin-bottom: 16px;
+  margin-bottom: 1rem; }
+
 .article-footer {
   padding: .5em;
   background: #171e23;
@@ -1090,3 +1094,7 @@ footer.main {
     width: -moz-calc(66.6666666667% - .5em);
     width: -webkit-calc(66.6666666667% - .5em);
     width: calc(66.6666666667% - .5em); } }
+.main pre.prettyprint {
+  font-size: .875em;
+  line-height: 1.125em;
+  margin-bottom: 1.25em; }

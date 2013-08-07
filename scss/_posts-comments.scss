@@ -43,6 +43,10 @@
         padding-top: .5em;
     }
 
+    .bottom-date {
+        @include rem-px(margin-bottom, 1rem);
+    }
+
     .article-footer {
         padding: .5em;
         background: $sqDarkGrey;
