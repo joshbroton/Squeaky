@@ -857,6 +857,8 @@ section[role='complimentary'] {
   margin-bottom: 0; }
   .article header h1 a {
     font-weight: bold; }
+.article .socialpost-type {
+  text-transform: capitalize; }
 .article hr {
   margin: 2em 20%;
   width: 60%; }

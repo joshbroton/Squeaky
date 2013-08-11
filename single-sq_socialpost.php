@@ -12,7 +12,7 @@
                             <header class="article-header">
                                 <?php if( $post_format != 'aside' && $post_format != 'status'): ?>
                                 <h1 title="<?php the_title_attribute(); ?>" itemprop="headline">
-                                    <?php echo '<span class="socialpost-type">' + $post_format + ':</span> '; the_title(); ?>
+                                    <?php echo '<span class="socialpost-type">' . $post_format . ':</span> '; the_title(); ?>
                                 </h1>
                                 <aside class="byline vcard">
                                     Posted <time class="updated" datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time(get_option('date_format')); ?></time> by <span class="author"><?php the_author_posts_link(); ?></span>
@@ -34,7 +34,7 @@
                             </main>
                             <footer class="article-footer">
                                 <section class="categories">
-                                    Categories: <?php the_category(', '); ?>
+                                    Categories: <?php the_terms( $post->ID, 'sq_socialpost_categories', '', ', ', ' ' ); ?>
                                 </section>
                                 <section class="tags">
                                     <?php the_tags('<span class="tags-title">Tags:</span> ', ', ', ''); ?>

@@ -3,10 +3,16 @@
     <section class="main clearfix">
         <section class="content" role="main">
             <?php if(have_posts()) : while(have_posts()) : the_post(); ?>
+                <?php
+                $post_format = get_post_format();
+                if ( $post_format == null ):
+                    $post_format = 'standard';
+                endif;
+                ?>
                 <article id="post-<?php the_ID(); ?>" <?php post_class('article clearfix'); ?> role="article">
                     <header class="article-header">
                         <h1>
-                            <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+                            <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php echo '<span class="socialpost-type">' . $post_format . ':</span> '; the_title(); ?></a>
                         </h1>
                         <aside class="byline vcard">
                             <time class="updated" datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time(get_option('date_format')); ?></time> by <span class="author"><?php the_author_posts_link(); ?></span>
