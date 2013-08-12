@@ -150,8 +150,9 @@ li {
   margin-bottom: .375em; }
 
 blockquote {
-  margin: 0 1em 1.2em 0.75em;
-  border-left: 5px solid #c5d2da;
+  margin: 0 1em 1.2em 0;
+  padding-left: .75em;
+  border-left: 0.75em solid #c5d2da;
   font-family: "PT Sans", sans-serif;
   font-style: italic; }
 

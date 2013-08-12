@@ -159,8 +159,9 @@ ol {
     }
 
 blockquote {
-    margin: 0 $gutter $baselineHeight $gutter - .25em;
-    border-left: 5px solid $sqLightGrey;
+    margin: 0 $gutter $baselineHeight 0;
+    padding-left: .75em;
+    border-left: .75em solid $sqLightGrey;
     font-family: $headingFont;
     font-style: italic;
 }
