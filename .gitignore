@@ -168,3 +168,6 @@ pip-log.txt
 
 #JetBrains
 .idea
+
+#git orig files
+*.orig
