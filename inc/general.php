@@ -113,7 +113,7 @@ if (!function_exists('sq_post_thumbnail_support')) {
 if (!function_exists('sq_post_format_support')) {
     function sq_post_format_support()
     {
-        add_theme_support('post-formats', array('gallery', 'link', 'image', 'quote', 'status', 'video', 'audio'));
+        add_theme_support('post-formats', array('aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio'));
         add_post_type_support('sq_post_type_socialpost', 'post-formats');
     }
 }
@@ -148,6 +148,14 @@ if (!function_exists('sq_widgets_init')) {
     }
 }
 //end sq_widgets_init
+
+//Add HTML5 support in search form, comment form, and comment list
+if (!function_exists('sq_html5_support')) {
+    function sq_html5_support() {
+        add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
+    }
+}
+
 
 
 if (!function_exists('sq_remove_width_attribute')) {

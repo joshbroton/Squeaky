@@ -25,7 +25,7 @@ if (!function_exists('sq_theme_init')) {
         //clean up the head
         sq_remove_default_wp_actions();
 
-        //register those menus
+        //register custom menus
         sq_register_menus();
 
         //set image max width
@@ -36,6 +36,9 @@ if (!function_exists('sq_theme_init')) {
 
         //add post format support
         sq_post_format_support();
+
+        //add html5 support
+        sq_html5_support();
 
         // Link post thumbnail to post permalink
         add_filter('post_thumbnail_html', 'sq_post_image_html', 10, 3);
