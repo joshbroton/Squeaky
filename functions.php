@@ -3,7 +3,7 @@
 //get needed files
 include_once( 'inc/cpt.php' );
 include_once( 'inc/general.php' );
-include_once( 'inc/theme-options.php' );
+//include_once( 'inc/theme-options.php' );
 
 /**
  * sq_theme_init()
@@ -66,12 +66,17 @@ if (!function_exists('sq_theme_init')) {
         add_action('init', 'sq_post_type_portfolio');
         add_action('init', 'sq_post_type_socialpost');
 
-        add_action( 'admin_menu', 'sq_menu_add_theme_options_page' );
+        /*add_action( 'admin_menu', 'sq_menu_add_theme_options_page' );
         add_action( 'admin_init', 'sq_theme_options_init' );
-        add_action( 'wp_head', 'sq_theme_options_styles' );
+        add_action( 'wp_head', 'sq_theme_options_styles' );*/
+        add_action( 'customize_register', 'sq_customize_register' );
     }
 
     //thumbs up, lets go!
     sq_theme_init();
 
 }//end sq_theme_init()
+
+function sq_customize_register( $wp_customize ) {
+
+}
