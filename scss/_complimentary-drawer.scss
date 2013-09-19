@@ -1,0 +1,220 @@
+.open-close-sidebar {
+    display: none;
+}
+
+.sidebar-drawer-wrapper {
+	display: none;
+}
+
+@media only screen and (max-width: 48.5em) {
+
+	.sidebar-drawer {
+		#primary {
+			display: none;
+		}
+
+		.sidebar-drawer-wrapper {
+			display: block;
+			position: fixed;
+			left: 1em;
+			right: 1em;
+			top: 100%;
+			bottom: 0;
+            margin: 0;
+			padding: .25em;
+			border-bottom-width: 0;
+			z-index: 100000;
+			@include box-shadow(0 0 7px rgba(0, 0, 0, .3));
+
+			.xoxo {
+				height: 100%;
+				padding: 1em;
+				overflow-x: hidden;
+				overflow-y: auto;
+			}
+		}
+
+			.open-close-sidebar {
+				display: block;
+				position: absolute;
+				top: -3.375em;
+				right: 2em;
+				padding: 1em;
+				border: 1px dashed #aaa;
+				border-bottom: 0;
+				@include border-radius(.5em, 0, 0, .5em);
+				background: #F9F9F9;
+				//font-size: 0px;
+				color: $green;
+				z-index: 1;
+
+				&:hover {
+					text-decoration: none;
+				}
+
+				&:before {
+					content: '';
+					display: block;
+					height: 4px;
+					width: 30px;
+					border-top: 4px solid $green;
+					border-bottom: 4px solid $green;
+					margin-bottom: 4px;
+					@include transition(border-color 0.3s ease);
+				}
+
+				&:after {
+					content: '';
+					display: block;
+					height: 0;
+					width: 100%;
+					border-top: 4px solid $green;
+					border-bottom: 0;
+					@include transition(border-color 0.3s ease);
+				}
+			}
+
+		&.open-drawer {
+			.open-close-sidebar {
+				&:after {
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 32em) {
+	.sidebar-drawer {
+		.sidebar-drawer-wrapper {
+			@include transition(top .5s ease);
+		}
+
+		&.open-drawer {
+            overflow: hidden;
+
+			.sidebar-drawer-wrapper {
+				top: 10%;
+			}
+
+            &.admin-bar {
+                .sidebar-drawer-wrapper {
+                    top: 15%;
+                }
+            }
+		}
+
+        #footer {
+            padding-bottom: 3em;
+        }
+	}
+}
+
+@media only screen and (min-width: 32em) and (max-width: 48.5em) {
+	.sidebar-drawer {
+        #container {
+            width: 100%;
+        }
+
+		.sidebar-drawer-wrapper {
+			display: block;
+			position: fixed;
+			left: 100%;
+			right: auto;
+			top: 1em;
+			bottom: 1em;
+			width: 250px;
+			padding: .25em;
+			border-right-width: 0;
+			border-bottom-width: 1px;
+			@include transition(left .4s ease);
+		}
+
+		.open-close-sidebar {
+			top: 4em;
+			right: auto;
+			left: -4.25em;
+			@include border-radius(0, 0, .5em, .5em);;
+			border: 1px dashed #aaa;
+			border-right: 0;
+		}
+
+        &.admin-bar {
+            .sidebar-drawer-wrapper {
+                top: 3em;
+            }
+        }
+
+		&.open-drawer {
+			.sidebar-drawer-wrapper {
+				@include css3-calc('left', '100% - 250px');
+			}
+		}
+
+		&.pinned-sidebar {
+			.pin-sidebar {
+				top: .25em;
+				right: .25em;
+				@include rotate(-90);
+
+			}
+
+			#container {
+				float: left;
+				@include css3-calc('width', '100% - (250px + 3em)');
+			}
+
+			#primary {
+				display: block;
+				float: right;
+				position: relative;
+				left: auto;
+				top: auto;
+				bottom: auto;
+				width: 247px;
+				border-right-width: 1px;
+				@include box-shadow(0 0 7px rgba(0, 0, 0, 0));
+				z-index: 1 !important;
+			}
+
+			.sidebar-drawer-wrapper {
+				display: none;
+			}
+
+			.open-close-sidebar {
+				display: none;
+			}
+		}
+	}
+
+		.pin-sidebar {
+			display: inline-block;
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 16px;
+			height: 16px;
+			cursor: pointer;
+			z-index: 1;
+		}
+}
+
+@media only screen and (min-width: 48.5em) {
+    .slimScrollBar,
+    .slimScrollRail {
+        display: none !important;
+    }
+
+	.sidebar-drawer-wrapper {
+		display: none;
+	}
+}
+
+@include keyframes(open-left) {
+    from { left: 100%; }
+    to   { left: -webkit-calc(100% - 250px); left: -moz-calc(100% - 250px); left: -o-calc(100% - 250px); left: calc(100% - 250px); }
+}
+
+@include keyframes(close-left) {
+    from { left: -webkit-calc(100% - 250px); left: -moz-calc(100% - 250px); left: -o-calc(100% - 250px); left: calc(100% - 250px); }
+    to   { left: 100%; }
+}
