@@ -153,3 +153,22 @@ if (!function_exists('sq_remove_width_attribute')) {
         return preg_replace('/(width|height)="\d*"\s/', "", $html);
     }
 }//end sq_remove_width_attribute
+
+
+/**
+ * Adds a class "sidebar-drawer" if user selects option in theme customizer
+ *
+ * @returns string
+ */
+
+if (!function_exists('sq_sidebar_drawer_body_class')) {
+    function sq_sidebar_drawer_body_class($classes) {
+        // add 'class-name' to the $classes array
+
+        if ( get_theme_mod( 'sq_sidebar_drawer', 'true' ) != 'false' ) {
+            $classes[] = 'sidebar-drawer';
+        }
+        // return the $classes array
+        return $classes;
+    }
+}
