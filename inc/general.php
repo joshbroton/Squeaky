@@ -8,6 +8,7 @@ if (!function_exists('sq_scripts_method')) {
         wp_enqueue_script( 'jquery', get_site_url() . '/wp-includes/js/jquery/jquery.js', '', '', true );
         wp_enqueue_script( 'hoverintent', get_template_directory_uri() . '/js/hoverIntent.js', array( 'jquery' ), '', true );
         wp_enqueue_script( 'superfish', get_template_directory_uri() . '/js/superfish.js', array( 'jquery' ), '', true );
+        wp_enqueue_script( 'squeayclean', get_template_directory_uri() . '/js/app.js', array( 'jquery' ), '', true );
 
         if (is_singular()) {
             wp_enqueue_script( 'comment-reply', get_site_url() . '/wp-includes/js/comment-reply.js', '', '', true );

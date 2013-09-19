@@ -9,7 +9,7 @@
 @media only screen and (max-width: 48.5em) {
 
 	.sidebar-drawer {
-		#primary {
+		.sidebar {
 			display: none;
 		}
 
@@ -26,7 +26,7 @@
 			z-index: 100000;
 			@include box-shadow(0 0 7px rgba(0, 0, 0, .3));
 
-			.xoxo {
+			.sidebar-scroll {
 				height: 100%;
 				padding: 1em;
 				overflow-x: hidden;
@@ -44,8 +44,6 @@
 				border-bottom: 0;
 				@include border-radius(.5em, 0, 0, .5em);
 				background: #F9F9F9;
-				//font-size: 0px;
-				color: $green;
 				z-index: 1;
 
 				&:hover {
@@ -57,8 +55,8 @@
 					display: block;
 					height: 4px;
 					width: 30px;
-					border-top: 4px solid $green;
-					border-bottom: 4px solid $green;
+					border-top: 4px solid $textColor;
+					border-bottom: 4px solid $textColor;
 					margin-bottom: 4px;
 					@include transition(border-color 0.3s ease);
 				}
@@ -68,7 +66,7 @@
 					display: block;
 					height: 0;
 					width: 100%;
-					border-top: 4px solid $green;
+					border-top: 4px solid $textColor;
 					border-bottom: 0;
 					@include transition(border-color 0.3s ease);
 				}
@@ -207,14 +205,4 @@
 	.sidebar-drawer-wrapper {
 		display: none;
 	}
-}
-
-@include keyframes(open-left) {
-    from { left: 100%; }
-    to   { left: -webkit-calc(100% - 250px); left: -moz-calc(100% - 250px); left: -o-calc(100% - 250px); left: calc(100% - 250px); }
-}
-
-@include keyframes(close-left) {
-    from { left: -webkit-calc(100% - 250px); left: -moz-calc(100% - 250px); left: -o-calc(100% - 250px); left: calc(100% - 250px); }
-    to   { left: 100%; }
 }
