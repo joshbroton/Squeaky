@@ -22,7 +22,8 @@
 			bottom: 0;
             margin: 0;
 			padding: .25em;
-			border-bottom-width: 0;
+            background: $sqDarkGrey;
+            border: 0;
 			z-index: 100000;
 			@include box-shadow(0 0 7px rgba(0, 0, 0, .3));
 
@@ -37,13 +38,12 @@
 			.open-close-sidebar {
 				display: block;
 				position: absolute;
-				top: -3.375em;
+				top: -2.675em;
 				right: 2em;
 				padding: 1em;
-				border: 1px dashed #aaa;
 				border-bottom: 0;
 				@include border-radius(.5em, 0, 0, .5em);
-				background: #F9F9F9;
+				background: $sqDarkGrey;
 				z-index: 1;
 
 				&:hover {
@@ -105,6 +105,10 @@
             padding-bottom: 3em;
         }
 	}
+
+        .pin-sidebar {
+            display: none;
+        }
 }
 
 @media only screen and (min-width: 32em) and (max-width: 48.5em) {
@@ -128,11 +132,10 @@
 		}
 
 		.open-close-sidebar {
-			top: 4em;
+			top: 3em;
 			right: auto;
-			left: -4.25em;
-			@include border-radius(0, 0, .5em, .5em);;
-			border: 1px dashed #aaa;
+			left: -3.25em;
+			@include border-radius(0, 0, .5em, .5em);
 			border-right: 0;
 		}
 
@@ -156,12 +159,12 @@
 
 			}
 
-			#container {
+			section.main {
 				float: left;
 				@include css3-calc('width', '100% - (250px + 3em)');
 			}
 
-			#primary {
+			section[role="complimentary"] {
 				display: block;
 				float: right;
 				position: relative;

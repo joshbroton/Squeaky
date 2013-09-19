@@ -26,10 +26,10 @@
         <?php
         $use_sidebar_drawer = get_theme_mod( 'sq_sidebar_drawer', true );
         if ( $use_sidebar_drawer ) : ?>
-            <div class="sidebar-drawer-wrapper">
+            <section class="sidebar-drawer-wrapper" role="complimentary">
                 <a class="open-close-sidebar" onclick="squeakyclean.toggleDrawer();"></a>
                 <a class="pin-sidebar">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/pin.png" alt="Pin the sidebar" title="Pin the sidebar to the page" onclick="sqeakyclean.pinSidebar();" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/pin.png" alt="Pin the sidebar" title="Pin the sidebar to the page" onclick="squeakyclean.pinSidebar();" />
                 </a>
                 <div class="sidebar-scroll">
                 <!-- javascript copies contents of #primary here
