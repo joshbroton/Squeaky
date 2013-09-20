@@ -366,6 +366,7 @@ button,
 input[type="button"],
 input[type="submit"],
 input[type="reset"] {
+	display: inline-block;
     width: auto;
     height: auto;
     padding: .25em .5em;
@@ -390,11 +391,22 @@ textarea[readonly] {
     cursor: not-allowed;
 }
 
-::-webkit-input-placeholder,
-:-moz-placeholder,
+::-webkit-input-placeholder {
+	color: $textboxPlaceholderColor;
+	font-size: .875em;
+	font-style: italic;
+}
+
+:-moz-placeholder {
+	color: $textboxPlaceholderColor;
+	font-size: .875em;
+	font-style: italic;
+}
+
 :-ms-input-placeholder {
     color: $textboxPlaceholderColor;
     font-size: .875em;
+	font-style: italic;
 }
 
 /* BUTTON SIZES */

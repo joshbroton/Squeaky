@@ -57,7 +57,9 @@ if (!function_exists('sq_theme_init')) {
         add_theme_support('menus');
 
         // Remove the admin bar
-        show_admin_bar(false);
+	    if ( !current_user_can( 'manage_options' ) ) {
+		    show_admin_bar(false);
+	    }
 
         // automatic feeds
         add_theme_support('automatic-feed-links');

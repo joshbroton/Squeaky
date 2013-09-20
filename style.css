@@ -245,12 +245,12 @@ strong a {
 
 /* SELECTION */
 ::-moz-selection {
-  background-color: gray;
+  background-color: grey;
   color: white;
   text-shadow: none; }
 
 ::selection {
-  background-color: gray;
+  background-color: grey;
   color: white;
   text-shadow: none; }
 
@@ -344,6 +344,7 @@ button,
 input[type="button"],
 input[type="submit"],
 input[type="reset"] {
+  display: inline-block;
   width: auto;
   height: auto;
   padding: .25em .5em;
@@ -366,11 +367,20 @@ textarea[readonly] {
   opacity: 0.5;
   cursor: not-allowed; }
 
-::-webkit-input-placeholder,
-:-moz-placeholder,
+::-webkit-input-placeholder {
+  color: #536e80;
+  font-size: .875em;
+  font-style: italic; }
+
+:-moz-placeholder {
+  color: #536e80;
+  font-size: .875em;
+  font-style: italic; }
+
 :-ms-input-placeholder {
   color: #536e80;
-  font-size: .875em; }
+  font-size: .875em;
+  font-style: italic; }
 
 /* BUTTON SIZES */
 .button-xl {
@@ -590,6 +600,9 @@ header.main {
     header.main h1 img {
       height: 100%;
       vertical-align: top; }
+
+.admin-bar header.main {
+  top: 28px; }
 
 .full-name {
   margin-left: .25em;
