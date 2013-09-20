@@ -3,6 +3,7 @@ section.main {
     max-width: 1200px;
     @include center-block();
     padding: 1em;
+    @include clearfix();
 }
 
 .youtube {

@@ -1,3 +1,10 @@
+<?php
+/*
+ * The footer of the site.
+ */
+
+?>
+
             <footer class="main" role="contentinfo">
                 <article class="copyright">
                     This is the <a href="http://github.com/joshbroton/Squeaky">squeakyclean WordPress Boilerplate</a>, and it's &copy;<?php echo date("Y"); ?> <a href="http://www.twitter.com/joshbroton">Josh Broton</a> and <a href="http://joshbroton.com">Aspects/Reference</a>.<br />
@@ -15,26 +22,30 @@
                 </nav>
             </footer>
         </div>
+
+        <?php
+        $use_sidebar_drawer = get_theme_mod( 'sq_sidebar_drawer', true );
+        if ( $use_sidebar_drawer ) : ?>
+            <section class="sidebar-drawer-wrapper" role="complimentary">
+                <a class="open-close-sidebar" onclick="squeakyclean.toggleDrawer();"></a>
+                <a class="pin-sidebar">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/pin.png" alt="Pin the sidebar" title="Pin the sidebar to the page" onclick="squeakyclean.pinSidebar();" />
+                </a>
+                <div class="sidebar-scroll">
+                <!-- javascript copies contents of #primary here
+                     This is done to fix iOS position:fixed z-index bug -->
+                </div>
+            </div>
+            <script type="text/javascript">
+                jQuery(document).ready(function() {
+                    squeakyclean.sidebarDrawerInit();
+                });
+            </script>
+        <?php endif; ?>
+
         <?php wp_footer(); ?>
         <script>
-            (function(){
-                jQuery('.sf-menu ul').superfish({
-                    delay: 1000,
-                    animation: {opacity:'show',height:'show'},
-                    speed: 'fast',
-                    dropShadows: false
-                });
-
-                jQuery('#openMobileMenu').on('click', (function () {
-                    var menuid = jQuery('nav.primary');
-                    if (!menuid.is(':visible')) {
-                        menuid.slideDown(300);
-                    } else {
-                        menuid.slideUp(300);
-                    };
-                })
-                );
-            })();
+            squeakyclean.menuInit();
         </script>
     </body>
 </html>
