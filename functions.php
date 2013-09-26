@@ -53,12 +53,9 @@ if (!function_exists('sq_theme_init')) {
         // Images are sized via CSS or inline style="" attribute by user.
         add_filter('image_send_to_editor', 'sq_remove_width_attribute', 10);
 
-        //Enable custom menus
+        // Enable custom menus
         add_theme_support('menus');
 
-	    if ( !current_user_can( 'manage_options' ) ) {
-		    show_admin_bar(false);
-	    }
         // automatic feeds
         add_theme_support('automatic-feed-links');
 

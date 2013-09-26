@@ -6,7 +6,7 @@
 	display: none;
 }
 
-@media only screen and (max-width: 48.5em) {
+@media only screen and (max-width: 62em) {
 
 	.sidebar-drawer {
 		.sidebar {
@@ -16,8 +16,8 @@
 		.sidebar-drawer-wrapper {
 			display: block;
 			position: fixed;
-			left: 1em;
-			right: 1em;
+			left: 0;
+			right: 0;
 			top: 100%;
 			bottom: 0;
             margin: 0;
@@ -32,6 +32,20 @@
 				padding: 1em;
 				overflow-x: hidden;
 				overflow-y: auto;
+			}
+
+			article {
+				float: none;
+				width: 100%;
+				border: 0;
+			}
+
+			hr {
+				display: block;
+
+				&:last-of-type {
+					display: none;
+				}
 			}
 		}
 
@@ -73,6 +87,8 @@
 			}
 
 		&.open-drawer {
+			overflow: hidden;
+
 			.open-close-sidebar {
 				&:after {
 				}
@@ -88,15 +104,14 @@
 		}
 
 		&.open-drawer {
-            overflow: hidden;
 
 			.sidebar-drawer-wrapper {
-				top: 10%;
+				top: 25%;
 			}
 
             &.admin-bar {
                 .sidebar-drawer-wrapper {
-                    top: 15%;
+                    top: 25%;
                 }
             }
 		}
@@ -111,7 +126,7 @@
         }
 }
 
-@media only screen and (min-width: 32em) and (max-width: 48.5em) {
+@media only screen and (min-width: 32em) and (max-width: 62em) {
 	.sidebar-drawer {
         #container {
             width: 100%;
@@ -122,7 +137,7 @@
 			position: fixed;
 			left: 100%;
 			right: auto;
-			top: 1em;
+			top: 3em;
 			bottom: 1em;
 			width: 250px;
 			padding: .25em;
@@ -141,7 +156,7 @@
 
         &.admin-bar {
             .sidebar-drawer-wrapper {
-                top: 3em;
+                top: 5em;
             }
         }
 
@@ -199,11 +214,7 @@
 		}
 }
 
-@media only screen and (min-width: 48.5em) {
-    .slimScrollBar,
-    .slimScrollRail {
-        display: none !important;
-    }
+@media only screen and (min-width: 62em) {
 
 	.sidebar-drawer-wrapper {
 		display: none;
