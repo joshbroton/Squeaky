@@ -4,6 +4,9 @@ Version 0.2 of a fast and clean WordPress theme boilerplate. Total download with
 
 You can see the theme in action at [joshbroton.com](http://joshbroton.com).
 
+##This theme is no longer maintained. I've redirected all effort to [Spring Theme](https://github.com/3themes/spring-theme). Please join the development there.##
+
+
 
 Changelog
 ---------
